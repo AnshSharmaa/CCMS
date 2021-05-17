@@ -2,11 +2,11 @@ import express from "express"
 import mongoose from "mongoose"
 import cors from "cors"
 
-import postRoutes from "./routes/posts.js"
+import Routes from "./routes/posts_profiles.js"
 
 const app = express()
 
-app.use("/posts", postRoutes)
+app.use("/data", Routes)
 
 app.use(express.json({ limit: "10mb", extended: true }))
 app.use(express.urlencoded({ limit: "10mb", extended: true }))
