@@ -43,3 +43,15 @@ export const updateProfile = async (req, res) => {
 
   res.json(updatedProfile)
 }
+
+export const deleteProfile = async (req, res) => {
+  const { id: _id } = req.prams
+
+  if (!mongoose.Types.ObjectId.isValid(_id)) {
+    return res.status(404).send("No post with that id")
+  }
+
+  await ProfileSchema.findByIdAndDelete(_id)
+
+  res.json({ message: "Post deleted successfully" })
+}
