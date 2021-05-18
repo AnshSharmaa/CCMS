@@ -8,11 +8,11 @@ import Routes from "./routes/posts_profiles.js"
 const app = express()
 dotenv.config()
 
-app.use("/data", Routes)
-
 app.use(express.json({ limit: "10mb", extended: true }))
 app.use(express.urlencoded({ limit: "10mb", extended: true }))
 app.use(cors())
+
+app.use("/data", Routes)
 
 const PORT = process.env.PORT || 5000
 

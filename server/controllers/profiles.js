@@ -10,6 +10,16 @@ export const getProfile = async (req, res) => {
   }
 }
 
-export const createProfile = (req, res) => {
-  res.send("Profile creation")
+export const createProfile = async (req, res) => {
+  const profile = req.body
+
+  const newProfile = new ProfileSchema(profile)
+
+  try {
+    await newProfile.save()
+
+    res.status(201).json(newProfile)
+  } catch (error) {
+    res.status(409).json({ message: error.message })
+  }
 }
