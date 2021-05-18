@@ -24,7 +24,7 @@
     ``` http://localhost:5000/data/posts```
     to see al the posts in you db
 ## index.js
-THis is what you cna call the home of our app our server starts from here and all the backend functionality is called/used from here
+This is what you cna call the home of our app our server starts from here and all the backend functionality is called/used from here
 
 to read: 
 1. [app.use](https://expressjs.com/en/guide/using-middleware.html) 
@@ -82,4 +82,6 @@ const postSchema = mongoose.Schema({
 })
 ```
 
+## flow 
+![](server.png)
 
