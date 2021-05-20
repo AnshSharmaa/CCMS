@@ -23,12 +23,26 @@
     now you can visit
     ``` http://localhost:5000/data/posts```
     to see al the posts in you db
+
+## Imp 
+our project is using ES6 import syntax instead of the old require one
+for that we had to add this line in our package.json
+```
+"type": "module",
+```
 ## index.js
 This is what you cna call the home of our app our server starts from here and all the backend functionality is called/used from here
+
+dependencies:
+1. [env](https://medium.com/@thejasonfile/using-dotenv-package-to-create-environment-variables-33da4ac4ea8f) : basically to hide our MongoDB cluster login info from git
+2. [Cors](https://auth0.com/blog/cors-tutorial-a-guide-to-cross-origin-resource-sharing/) : mainly for us to connect backend to frontend as they will be from different domain(server:localhost:5000, client: localhost:3000 )
+3. [express.json()](https://expressjs.com/en/api.html) : Controls the maximum request body size(i.e the files we will be sending to the server which also includes images). If this is a number, then the value specifies the number of bytes; if it is a string, the value is passed to the bytes library for parsing. 
+4. express.urlencoded : This is a built-in middleware function in Express. It parses incoming requests with urlencoded payloads and is based on body-parser. basically parses every incoming request to json automatically
 
 to read: 
 1. [app.use](https://expressjs.com/en/guide/using-middleware.html) 
 2. [.then](https://javascript.info/promise-chaining)
+
 ## routes 
 this contains all the routing functionality like if we visit http://localhost:5000/data/posts what should happen this is complemented by [controllers](#controllers) which control what happens when we visit http://localhost:5000/data/posts 
 
