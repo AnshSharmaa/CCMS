@@ -4,7 +4,7 @@ const App = () => {
   return (
     <>
     <h4>CCMS</h4>
-     <form action="/action_page.php">
+     <form action="">
     <div className="row">
       <div className="col-25">
       </div>
