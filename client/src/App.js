@@ -3,7 +3,6 @@ import './App.css';
 const App = () => {
   return (
     <>
-    <div>
     <h4>CCMS</h4>
      <form action="/action_page.php">
     <div className="row">
@@ -36,7 +35,7 @@ const App = () => {
   <span className="slider round"></span>
 Post
 </label>
-    </div>
+    </form>
 </>
   )
 }
