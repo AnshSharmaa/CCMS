@@ -51,7 +51,7 @@ const Main = () => {
                         </img>
                 </Grid>
                 <Typography variant="h4" className={classes.HiText}>
-                    Hi, Welcome to Custom CCMS
+                    Hi, Welcome to Custom CMS
                 </Typography>
             </Grid>
             <Box component="div" className={classes.feat}>
