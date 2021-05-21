@@ -3,7 +3,7 @@ import './App.css';
 const App = () => {
   return (
     <>
-    <h4>CCMS</h4>
+    <h4 className="topic">CCMS</h4>
      <form action="">
     <div className="row">
       <div className="col-25">
@@ -16,7 +16,7 @@ const App = () => {
       <div className="col-25">
       </div>
       <div className="col-75">
-        <input type="text" id="lname" name="lastname" placeholder="Author Name"/>
+        <input type="text" id="lname" placeholder="Author Name"/>
       </div>
     </div>
     <div className="row">
