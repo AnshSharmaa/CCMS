@@ -1,11 +1,10 @@
-import React from "react"
+import React from 'react';
+import Home from "./Pages/Home/Home"
 
-const App = () => {
+function App() {
   return (
-    <div>
-      <h1>App</h1>
-    </div>
+    <Home/>
   )
 }
 
-export default App
+export default App;
