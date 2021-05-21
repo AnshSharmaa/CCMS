@@ -33,15 +33,20 @@ for that we had to add this line in our package.json
 ## index.js
 This is what you cna call the home of our app our server starts from here and all the backend functionality is called/used from here
 
-dependencies:
-1. [env](https://medium.com/@thejasonfile/using-dotenv-package-to-create-environment-variables-33da4ac4ea8f) : basically to hide our MongoDB cluster login info from git
-2. [Cors](https://auth0.com/blog/cors-tutorial-a-guide-to-cross-origin-resource-sharing/) : mainly for us to connect backend to frontend as they will be from different domain(server:localhost:5000, client: localhost:3000 )
-3. [express.json()](https://expressjs.com/en/api.html) : Controls the maximum request body size(i.e the files we will be sending to the server which also includes images). If this is a number, then the value specifies the number of bytes; if it is a string, the value is passed to the bytes library for parsing. 
-4. express.urlencoded : This is a built-in middleware function in Express. It parses incoming requests with urlencoded payloads and is based on body-parser. basically parses every incoming request to json automatically
+### dependencies:
+1. [Express](https://expressjs.com/) : Express is a minimal and flexible Node.js web application framework that provides a robust set of features for web and mobile applications. Basically makes our life easier
+2. [env](https://medium.com/@thejasonfile/using-dotenv-package-to-create-environment-variables-33da4ac4ea8f) : basically to hide our MongoDB cluster login info from git
+3. [Cors](https://auth0.com/blog/cors-tutorial-a-guide-to-cross-origin-resource-sharing/) : mainly for us to connect backend to frontend as they will be from different domain(server:localhost:5000, client: localhost:3000 )
+4. [Mongoose](https://mongoosejs.com/docs/guide.html) : Mongoose helps us to make Schemas for MongoDB, Each schema maps to a MongoDB collection and defines the shape of the documents within that collection.
 
-to read: 
+
+
+
+### to read: 
 1. [app.use](https://expressjs.com/en/guide/using-middleware.html) 
 2. [.then](https://javascript.info/promise-chaining)
+3. [express.json()](https://expressjs.com/en/api.html) : Controls the maximum request body size(i.e the files we will be sending to the server which also includes images). If this is a number, then the value specifies the number of bytes; if it is a string, the value is passed to the bytes library for parsing. 
+4. express.urlencoded() : This is a built-in middleware function in Express. It parses incoming requests with urlencoded payloads and is based on body-parser. basically parses every incoming request to json automatically
 
 ## routes 
 this contains all the routing functionality like if we visit http://localhost:5000/data/posts what should happen this is complemented by [controllers](#controllers) which control what happens when we visit http://localhost:5000/data/posts 
