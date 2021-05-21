@@ -1,96 +1,110 @@
 import React from "react"
-import { Box , Card, Grid, CardContent, Container, Typography} from '@material-ui/core';
+import { Box , Paper, Card, Grid, CardContent, Container, Typography, Button} from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import { pink } from "@material-ui/core/colors";
-import image from '../Images/main.png';
+import imagelink from '../Images/main.png';
+import logo from '../Images/Logo.png'
 
 const useStyles = makeStyles({
     container : {
         margin: "auto",
     },
     MainDiv : {
-        backgroundImage: 'url(${"image})',
-        height: "500px",
+        //backgroundImage: 'url('+imagelink+')',
         backgroundColor: pink[100],
-        backgroundPosition: 'center', 
-        backgroundSize: 'cover', 
-        backgroundRepeat: 'no-repeat',
     },
     LOGO : {
-        flex: 1,
+    },
+    HiText : {
+        color: "white"
     },
     feat : {
-        width: "100%"
+        width: "100%",
+        marginTop: "20px",
+        marginBottom: "20px"
     },
     card : {
-        flex: 1,
+        height: "200px",
+        minWidth: "200px",
     },
     started : {
         backgroundColor: pink[100],
         height: "200px",
+        marginTop: "20px",
+        marginBottom: "20px"
     }
   });
 
 const Main = () => {
     const classes = useStyles();
     return (
-        <div className={classes.container}>
-            <Box component="div" className={classes.MainDiv} justifyContent="space-in-between">
-                <Box className={classes.LOGO}>
-                    LOGO
-                </Box>
-                <Typography color="inherit">
+        <Paper className={classes.container}>
+            <Grid
+                container
+                direction="row"
+                justify="space-around"
+                alignItems="center"
+                className={classes.MainDiv}
+                >
+                <Grid item className={classes.LOGO}>
+                        <img src={logo}>
+                        </img>
+                </Grid>
+                <Typography variant="h4" className={classes.HiText}>
                     Hi, Welcome to Custom CCMS
                 </Typography>
-            </Box>
+            </Grid>
             <Box component="div" className={classes.feat}>
                 <Typography align="center" variant="h5">Features</Typography>
             </Box>
-            <Container className={classes.card}>
-                <Grid container>
-                    <Grid item sm={3}>
-                    <Card width={1/4}>
-                        <CardContent>
-                            <Typography>
-                                Create
-                            </Typography>
-                        </CardContent>
-                    </Card>
+            <Container >
+                <Grid 
+                    container
+                    direction="row"
+                    justify="space-around"
+                    alignItems="stretch"
+                    
+                >
+                    <Grid item >
+                        <Card className={classes.card}>
+                            <CardContent>
+                                <Typography>Create</Typography>
+                            </CardContent>
+                        </Card>
                     </Grid>
-                    <Grid item sm={3}>
-                    <Card width={1/4}>
-                        <CardContent>
-                            <Typography>
-                                Update
-                            </Typography>
-                        </CardContent>
-                    </Card>
+                    <Grid item >
+                        <Card className={classes.card}>
+                            <CardContent>
+                                <Typography>Update</Typography>
+                            </CardContent>
+                        </Card>
                     </Grid>
-                    <Grid item sm={3}>
-                    <Card width={1/4} className={classes.card}>
-                        <CardContent>
-                            <Typography>
-                                Delete
-                            </Typography>
-                        </CardContent>
-                    </Card>
+                    <Grid item >
+                        <Card className={classes.card}>
+                            <CardContent>
+                                <Typography>Delete</Typography>
+                            </CardContent>
+                        </Card>
                     </Grid>
-                    <Grid item sm={3}>
-                    <Card width={1/4} className={classes.card}>
-                        <CardContent>
-                            <Typography>
-                                2 Types of entities
-                            </Typography>
-                        </CardContent>
-                    </Card>
+                    <Grid item >
+                        <Card className={classes.card}>
+                            <CardContent>
+                                <Typography>2 Types of Entities</Typography>
+                            </CardContent>
+                        </Card>
                     </Grid>
                 </Grid>
-            
             </Container>
             <Box component="div" className={classes.started}>
                 <Typography align="center" variant="h5">Getting Started</Typography>
+                <Button>
+                    Login
+                </Button>
+                <Button>
+                    Signup
+                </Button>
             </Box>
-        </div>
+        </Paper>
         
         
     );
