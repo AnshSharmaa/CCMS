@@ -1,0 +1,36 @@
+#cd{
+    border-style:none;
+    height:50px;
+    width:1330px;
+    background-color:grey;
+    margin-top:15px;
+    margin: left 20px;
+    height:33px;
+    }
+    #am{
+    margin-left:1210px;
+    margin-top: 10px;
+    background-color:grey;
+    }
+    #ef{
+    border-style:none;
+    width:55px;
+    height:20px;
+    margin-left:100px;
+    margin-top:-20px;
+    background-color:#D3D3D3;
+    }
+    #gh{
+    margin-top:10px;
+    margin-left:80px;
+    }
+    #ab{
+    border-style:none;
+    height:150px;
+    background-color:#FFB6C1
+    }
+    img{
+    float:left;
+    width:90px;
+    height:75px;
+    }
