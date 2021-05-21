@@ -1,15 +1,13 @@
-#lm{
-    width:1340px;
-    height:200px;
-    padding-top:-230px;
-    background-color:#FFB6C1;
-    }
-    #no{
-    width:1340px;
-    height:100px;
-    background-color:#FF69B4;
-    margin-top:-21px;
-    }
-    h4{
-    padding-top:-150px;
-    }
+#footer {
+  background-color: #ffb6c1;
+}
+
+a{
+  color: #01579b;
+  text-decoration: none;
+}
+
+.names{
+  display: flex;
+  justify-content: space-around;
+}

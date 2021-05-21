@@ -2,19 +2,19 @@
   background-color: #ffb6c1;
 }
 #nav {
-  background-color: grey;
+  background-color: #42a5f5;
   display: flex;
   justify-content: space-between;
   padding: 0 20px;
 }
 .name {
-  background-color: #d3d3d3;
+  background-color: #eee;
   padding: 4px;
 }
 #dataButton {
   padding: 10px;
   margin-top: 15px;
-  background-color: #d3d3d3;
+  background-color: #eee;
 }
 #welcome {
   display: flex;
