@@ -6,34 +6,38 @@ import Gicon from "./icon"
 import "./Auth.css"
 
 const Auth = () => {
-  const [signedIn, setsignedIn] = useState()
-
-  const switchMode = () => {
-    setsignedIn((prevIsSignUp) => !prevIsSignUp)
-  }
-
   const [user, setUser] = useState(JSON.parse(localStorage.getItem("profile")))
 
+  const logout = () => {
+    // dispatch({ type: actionType.LOGOUT })
+
+    // history.push("/auth")
+    localStorage.clear()
+    setUser(null)
+  }
+
   const googleSuccess = async (res) => {
-    var result = res?.profileObj
+    const result = res?.profileObj
     const token = res?.tokenId
 
     localStorage.setItem("profile", JSON.stringify({ result, token }))
-    switchMode()
+
+    console.log(result)
+    console.log(token)
 
     try {
       //dispatch({ type: "AUTH", data: { result, token } })
       //history.push("/")
-      alert("nice")
     } catch (error) {
       console.log(error)
     }
   }
+
   const googleFailure = (error) => {
     console.log("Sign in unsuccessful \n")
     console.log(error)
-    alert("Sign in unsuccessful, Please try again")
   }
+
   return (
     <div className="main">
       <GoogleLogin
@@ -52,7 +56,9 @@ const Auth = () => {
         cookiePolicy="single_host_origin"
       />
 
-      <p>{signedIn ? "Welcome :" + user.result.name : "not Signed In"}</p>
+      <button className="Glogin" onClick={logout}>
+        Logout
+      </button>
     </div>
   )
 }
