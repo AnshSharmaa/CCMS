@@ -1,4 +1,6 @@
 import express from "express"
+import auth from "../middleware/auth.js"
+
 import {
   getPosts,
   createPost,
@@ -16,14 +18,14 @@ const router = express.Router()
 
 //Post
 router.get("/posts", getPosts)
-router.post("/posts", createPost)
-router.patch("/:id", updatePost)
-router.delete("/:id", deletePost)
+router.post("/posts", auth, createPost)
+router.patch("/:id", auth, updatePost)
+router.delete("/:id", auth, deletePost)
 
 // Profile
 router.get("/profiles", getProfile)
-router.post("/profiles", createProfile)
-router.patch("/:id", updateProfile)
-router.delete("/:id", deleteProfile)
+router.post("/profiles", auth, createProfile)
+router.patch("/:id", auth, updateProfile)
+router.delete("/:id", auth, deleteProfile)
 
 export default router
