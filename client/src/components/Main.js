@@ -101,12 +101,12 @@ const Main = () => {
                 <Typography align="center" variant="h5" style={{paddingTop: '20px', paddingBottom: '20px'}}>Getting Started</Typography>
                 <Grid container justify="center" spacing={3}>
                     <Grid>
-                        <Button variant="contained" size="large" style={{backgroundColor:'#8c9eff',padding:'20px',margin:'20px'}}>
+                        <Button color="primary" variant="contained" size="large" style={{padding:'20px',margin:'20px'}}>
                             Login
                         </Button>
                     </Grid>
                     <Grid>
-                        <Button variant="contained" size="large" style={{backgroundColor:'#8c9eff',padding:'20px',margin:'20px'}}>
+                        <Button color="primary" variant="contained" size="large" style={{padding:'20px',margin:'20px'}}>
                             Signup
                         </Button>
                     </Grid>
