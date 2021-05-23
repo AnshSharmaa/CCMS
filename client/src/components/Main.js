@@ -1,13 +1,14 @@
 import React from "react"
 import { Box , Paper, Card, Grid, CardContent, Container, Typography, Button} from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
-import { pink } from "@material-ui/core/colors";
+import { pink, cyan} from "@material-ui/core/colors";
 import imagelink from '../Images/main.png';
 import logo from '../Images/Logo.png'
 
 const useStyles = makeStyles({
     container : {
         margin: "auto",
+        marginTop: '5px'
     },
     MainDiv : {
         //backgroundImage: 'url('+imagelink+')',
@@ -30,9 +31,10 @@ const useStyles = makeStyles({
     started : {
         backgroundColor: pink[100],
         height: "200px",
-        marginTop: "20px",
+        marginTop: "40px",
         marginBottom: "20px"
     }
+
   });
 
 const Main = () => {
@@ -96,13 +98,19 @@ const Main = () => {
                 </Grid>
             </Container>
             <Box component="div" className={classes.started}>
-                <Typography align="center" variant="h5">Getting Started</Typography>
-                <Button>
-                    Login
-                </Button>
-                <Button>
-                    Signup
-                </Button>
+                <Typography align="center" variant="h5" style={{paddingTop: '20px', paddingBottom: '20px'}}>Getting Started</Typography>
+                <Grid container justify="center" spacing={3}>
+                    <Grid>
+                        <Button variant="contained" size="large" style={{backgroundColor:'#8c9eff',padding:'20px',margin:'20px'}}>
+                            Login
+                        </Button>
+                    </Grid>
+                    <Grid>
+                        <Button variant="contained" size="large" style={{backgroundColor:'#8c9eff',padding:'20px',margin:'20px'}}>
+                            Signup
+                        </Button>
+                    </Grid>
+                </Grid>
             </Box>
         </Paper>
         
