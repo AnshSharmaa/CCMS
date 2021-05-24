@@ -1,21 +1,21 @@
 import React from "react"
+import { Link } from "react-router-dom"
+
 import "./header.css"
-import Logo from "./logo.jpeg"
+
 function Header() {
   return (
     <div id="header">
       <div id="nav">
         <h2 className="name">CCMS</h2>
         <div>
-          <button id="dataButton">Create/All data</button>
+          <Link to="/">
+            <button className="dataButton">Home</button>
+          </Link>
+          <Link to="/data">
+            <button className="dataButton">Create/All data</button>
+          </Link>
         </div>
-      </div>
-      <div id="welcome">
-        <img src={Logo} alt="logo" />
-        <h1 className="rightAlign">
-          Hi! Welcome to
-          <br /> CCMS
-        </h1>
       </div>
     </div>
   )

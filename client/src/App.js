@@ -1,15 +1,23 @@
 import React from "react"
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom"
 
 import "./App.css"
-import Auth from "./Components/Auth/Auth"
 
-import Data from "./Pages/Data/Data"
+import Header from "./Components/Header/header"
 import Home from "./Pages/Home/Home"
+import Data from "./Pages/Data/Data"
 
 const App = () => {
   return (
     <div className="App">
-      <Auth />
+      <Router>
+        <Header />
+        <Switch>
+          <Route path="/" exact component={() => <Home />} />
+
+          <Route path="/data" exact component={() => <Data />} />
+        </Switch>
+      </Router>
     </div>
   )
 }
