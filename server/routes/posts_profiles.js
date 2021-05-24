@@ -19,13 +19,13 @@ const router = express.Router()
 //Post
 router.get("/posts", getPosts)
 router.post("/posts", auth, createPost)
-router.patch("/:id", auth, updatePost)
-router.delete("/:id", auth, deletePost)
+router.patch("/post/:id", auth, updatePost)
+router.delete("/post/:id", auth, deletePost)
 
 // Profile
 router.get("/profiles", getProfile)
 router.post("/profiles", auth, createProfile)
-router.patch("/:id", auth, updateProfile)
-router.delete("/:id", auth, deleteProfile)
+router.patch("/profile/:id", auth, updateProfile)
+router.delete("/profile/:id", auth, deleteProfile)
 
 export default router
