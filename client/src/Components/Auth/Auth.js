@@ -40,7 +40,7 @@ const Auth = () => {
   }
 
   return (
-    <div className="main">
+    <div className="GoogleButton">
       {!user && (
         <GoogleLogin
           clientId="65050724318-9ost9pd74pn6lcvp7nnm21f6c1lcedd6.apps.googleusercontent.com"
