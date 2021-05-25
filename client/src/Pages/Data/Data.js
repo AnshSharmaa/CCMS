@@ -1,50 +1,64 @@
 import React from "react"
 
-function Data() {
-  return (
-    <>
-      <h4 className="topic">CCMS</h4>
-      <form action="">
-        <div className="row">
-          <div className="col-25"></div>
-          <div className="col-75">
-            <input
-              type="text"
-              id="fname"
-              name="firstname"
-              placeholder="Title"
-            />
-          </div>
-        </div>
-        <div className="row">
-          <div className="col-25"></div>
-          <div className="col-75">
-            <input type="text" id="lname" placeholder="Author Name" />
-          </div>
-        </div>
-        <div className="row">
-          <div className="col-25"></div>
-          <div className="col-75">
-            <textarea
-              id="content"
-              name="subject"
-              placeholder="Content"
-              style={{ height: "200px" }}
-            ></textarea>
-            <br />
-          </div>
-          <div className="row">
-            <input type="Date" placeholder="Date" />
-          </div>
-        </div>
+import "./Data.css"
 
-        <label className="switch">
-          <input type="checkbox" checked />
-          <span className="slider round"></span>
-          Post
-        </label>
+const Data = () => {
+  const profiles = 4
+  const posts = 5
+  return (
+    <div className="Data">
+      <form className="form">
+        <h3>Post</h3>
+        <input type="text" placeholder="Title" className="title" />
+        <br />
+        <input type="text" placeholder="Author Name" className="title" />
+        <br />
+        <input type="text" placeholder="Content" className="title" />
+        <br />
+        <input type="date" placeholder="Date" className="title" />
+        <br />
+
+        <div>
+          <label class="switch">
+            <input type="checkbox" />
+            <span class="slider round"></span>
+            Post
+          </label>{" "}
+          <pre> Post</pre>
+        </div>
       </form>
-    </>
+
+      <form className="form2">
+        <h3>Profile</h3>
+        <input type="text" placeholder="Name" className="title" />
+        <br />
+        <input type="text" placeholder="Designation" className="title" />
+        <br />
+        <input type="text" placeholder="Content" className="title" />
+        <br />
+        <input type="file" accept="image/*" className="title" />
+        <br />
+        <div>
+          <label class="switch">
+            <input type="checkbox" />
+            <span class="slider round"></span>
+          </label>
+          <pre> Profile</pre>
+        </div>
+      </form>
+
+      <div className="details">
+        <h3>Details</h3>
+        <h5>
+          No of post:
+          {posts}
+        </h5>
+        <h5>
+          No of profiles:
+          {profiles}
+        </h5>
+      </div>
+    </div>
   )
 }
 

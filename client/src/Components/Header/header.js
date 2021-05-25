@@ -7,7 +7,7 @@ function Header() {
   return (
     <div id="header">
       <div id="nav">
-        <h2 className="name">CCMS</h2>
+        <h2 className="CCMS">CCMS</h2>
         <div>
           <Link to="/">
             <button className="dataButton">Home</button>
