@@ -1,10 +1,9 @@
 import React from 'react';
 import Header from "../../components/Header";
 import { makeStyles } from '@material-ui/core/styles';
-import Main from '../../components/Main';
+import Datapage from '../../components/Datapage';
 import Footer from "../../components/Footer";
 import { createMuiTheme, ThemeProvider } from '@material-ui/core';
-import Data from '../../Pages/Data/Data'
 
 const theme = createMuiTheme(
   {
@@ -16,13 +15,14 @@ const theme = createMuiTheme(
   }
 );
 
-function Home() {
+function Data() {
   return (
-    <ThemeProvider theme={theme}>
-      <Header/><Main/><Footer/>
-
-    </ThemeProvider>      
+      <ThemeProvider>
+            <Header/>
+            <Datapage/>
+            <Footer/>
+      </ThemeProvider>      
   )
 }
 
-export default Home;
+export default Data;

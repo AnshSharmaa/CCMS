@@ -1,22 +1,18 @@
 import React from 'react';
 import Home from "./Pages/Home/Home"
-import { createMuiTheme, ThemeProvider } from '@material-ui/core';
-
-const theme = createMuiTheme(
-  {
-    palette : {
-      primary: {
-        main: '#81D0DB'
-      }
-    }
-  }
-);
+import Data from "./Pages/Data/Data"
+import {Route, BrowserRouter as Router, Link, Switch} from 'react-router-dom'
 
 function App() {
   return (
-    <ThemeProvider theme={theme}>
-      <Home/>
-    </ThemeProvider>
+    <div>
+      <Router >
+        <Switch>
+          <Route path="/" exact component={() => <Home/>} />
+          <Route path="/data" exact component={() => <Data/>} />
+        </Switch>
+      </Router>
+    </div>
     
   )
 }
