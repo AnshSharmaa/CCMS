@@ -21,6 +21,7 @@ const Auth = () => {
     const token = res?.tokenId
 
     localStorage.setItem("profile", JSON.stringify({ result, token }))
+    setUser(result, token)
 
     console.log(result)
     console.log(token)
@@ -39,26 +40,29 @@ const Auth = () => {
   }
 
   return (
-    <div className="main">
-      <GoogleLogin
-        clientId="65050724318-9ost9pd74pn6lcvp7nnm21f6c1lcedd6.apps.googleusercontent.com"
-        render={(renderProps) => (
-          <button
-            className="Glogin"
-            onClick={renderProps.onClick}
-            disabled={renderProps.disabled}
-          >
-            <Gicon /> Google Sign In
-          </button>
-        )}
-        onSuccess={googleSuccess}
-        onFailure={googleFailure}
-        cookiePolicy="single_host_origin"
-      />
-
-      <button className="Glogin" onClick={logout}>
-        Logout
-      </button>
+    <div className="GoogleButton">
+      {!user && (
+        <GoogleLogin
+          clientId="65050724318-9ost9pd74pn6lcvp7nnm21f6c1lcedd6.apps.googleusercontent.com"
+          render={(renderProps) => (
+            <button
+              className="Glogin"
+              onClick={renderProps.onClick}
+              disabled={renderProps.disabled}
+            >
+              <Gicon /> Google Sign In
+            </button>
+          )}
+          onSuccess={googleSuccess}
+          onFailure={googleFailure}
+          cookiePolicy="single_host_origin"
+        />
+      )}
+      {user && (
+        <button className="Glogin" onClick={logout}>
+          Logout
+        </button>
+      )}
     </div>
   )
 }

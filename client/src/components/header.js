@@ -12,6 +12,8 @@ import { makeStyles } from "@material-ui/core/styles"
 const useStyles = makeStyles({
   siteName: {
     flex: 1,
+    textDecoration: "none",
+    color: "#fff",
   },
 })
 
@@ -26,8 +28,22 @@ const Header = () => {
       }}
     >
       <Toolbar>
-        <IconButton edge="start" color="inherit" aria-label="menu"></IconButton>
-        <Typography className={classes.siteName}>Custom CMS</Typography>
+        <IconButton
+          edge="start"
+          color="inherit"
+          aria-label="menu"
+          component={Link}
+          to="/"
+        ></IconButton>
+
+        <Typography className={classes.siteName} component={Link} to="/">
+          Custom CMS
+        </Typography>
+
+        <Button color="inherit" component={Link} to="/">
+          Home
+        </Button>
+
         <Button color="inherit" component={Link} to="/data">
           Create/All Data
         </Button>
