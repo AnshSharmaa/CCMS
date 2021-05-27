@@ -26,7 +26,7 @@ export const createProfile = async (req, res) => {
 }
 
 export const updateProfile = async (req, res) => {
-  const { id: _id } = req.prams
+  const { id: _id } = req.params
 
   const profile = req.body
 
@@ -45,7 +45,7 @@ export const updateProfile = async (req, res) => {
 }
 
 export const deleteProfile = async (req, res) => {
-  const { id: _id } = req.prams
+  const { id: _id } = req.params
 
   if (!mongoose.Types.ObjectId.isValid(_id)) {
     return res.status(404).send("No post with that id")

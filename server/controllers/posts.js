@@ -26,7 +26,7 @@ export const createPost = async (req, res) => {
 }
 export const updatePost = async (req, res) => {
   //extracting from req.params and renaming id to _id
-  const { id: _id } = req.prams
+  const { id: _id } = req.params
 
   const post = req.body
 
@@ -46,13 +46,16 @@ export const updatePost = async (req, res) => {
 }
 
 export const deletePost = async (req, res) => {
-  const { id: _id } = req.prams
+  const { id: _id } = req.params
 
   if (!mongoose.Types.ObjectId.isValid(_id)) {
     return res.status(404).send("No post with that id")
   }
 
-  await PostSchema.findByIdAndDelete(_id)
-
-  res.json({ message: "Post deleted successfully" })
+  try {
+    await PostSchema.findByIdAndDelete(_id)
+    res.json({ message: "Post deleted successfully" })
+  } catch (error) {
+    return res.status(404).send("No post with that id")
+  }
 }
