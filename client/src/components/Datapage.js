@@ -1,47 +1,41 @@
 import React from "react"
-import { Button, AppBar,Toolbar, Typography,IconButton, Paper, Grid } from '@material-ui/core';
-import { makeStyles } from '@material-ui/core/styles';
-import Create from './Create';
-import Post from './Post'
-import Profile from './Profile'
+import { Paper, Grid } from "@material-ui/core"
+import { makeStyles } from "@material-ui/core/styles"
+import Create from "./create"
+import Posts from "./Posts/Posts"
+import Profiles from "./Profiles/Profiles"
 
 const useStyles = makeStyles({
-    cardPost: {
-        padding: "10px"
-    },
-    cardProfile: {
-        padding: "10px"
-    }
-
-  });
+  cardPost: {
+    padding: "10px",
+  },
+  cardProfile: {
+    padding: "10px",
+  },
+})
 
 const Datapage = () => {
-    const classes = useStyles();
-    return (
-        <Paper style={{maxWidth:'1800px',margin:'auto'}}>
-            <Grid>
-                <Create/>
+  const classes = useStyles()
+  return (
+    <Paper style={{ maxWidth: "1800px", margin: "auto" }}>
+      <Grid>
+        <Create />
+      </Grid>
+      <Paper>
+        <Grid container direction="row" justify="center">
+          <Grid container style={{ maxWidth: "1000px" }}>
+            <Grid item className={classes.cardPost}>
+              <Posts />
             </Grid>
-            <Paper>
-
-                <Grid 
-                container
-                direction="row"
-                justify="center"
-                >
-                    <Grid container style={{maxWidth:'1000px'}}>
-                        <Grid item className={classes.cardPost}><Post/></Grid>
-                        <Grid item className={classes.cardPost}><Post/></Grid>
-                        <Grid item className={classes.cardPost}><Post/></Grid>
-                        <Grid item className={classes.cardPost}><Post/></Grid>
-                    </Grid>
-                    <Grid container style={{maxWidth:'700px'}}>
-                        <Grid item className={classes.cardProfile}><Profile/></Grid>
-                    </Grid>
-                </Grid>
-                
-            </Paper>
-        </Paper>
-    );
-};
-export default Datapage;
+          </Grid>
+          <Grid container style={{ maxWidth: "700px" }}>
+            <Grid item className={classes.cardProfile}>
+              <Profiles />
+            </Grid>
+          </Grid>
+        </Grid>
+      </Paper>
+    </Paper>
+  )
+}
+export default Datapage
