@@ -70,7 +70,23 @@ const Create = () => {
                     id="standard-basic"
                     label="Author"
                   />
-
+                  <TextField
+                    fullWidth
+                    multiline
+                    rows={4}
+                    style={{ marginTop: "10px", marginBottom: "10px" }}
+                    id="standard-basic"
+                    label="Content"
+                  />
+                  <TextField
+                    style={{ marginTop: "10px", marginBottom: "10px", maxWidth: "400px",}}
+                    id="standard-basic"
+                    label="Date"
+                    type="date"
+                    InputLabelProps={{
+                      shrink: true,
+                    }}
+                  />
                   <Button>Submit</Button>
                 </Grid>
               </form>
@@ -115,7 +131,6 @@ const Create = () => {
                     id="standard-basic"
                     label="Content"
                   />
-
                   <Button
                     style={{ marginTop: "10px", marginBottom: "10px" }}
                     variant="contained"

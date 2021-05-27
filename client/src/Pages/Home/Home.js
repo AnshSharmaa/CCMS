@@ -7,11 +7,7 @@ import { createMuiTheme, ThemeProvider } from "@material-ui/core"
 import Data from "../../Pages/Data/Data"
 
 const theme = createMuiTheme({
-  palette: {
-    primary: {
-      main: "#81D0DB",
-    },
-  },
+  
 })
 
 function Home() {
