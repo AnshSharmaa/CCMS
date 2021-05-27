@@ -3,7 +3,7 @@ import mongoose from "mongoose"
 import cors from "cors"
 import dotenv from "dotenv"
 
-import Routes from "./routes/posts_profiles.js"
+import postRoutes from "./routes/posts_profiles.js"
 
 const app = express()
 dotenv.config()
@@ -15,7 +15,11 @@ app.use(express.urlencoded({ limit: "10mb", extended: true }))
 app.use(cors())
 
 // all the routes are with the prefix of /data  ex. localhost:5000/data/posts
-app.use("/data", Routes)
+app.use("/data", postRoutes)
+
+app.get("/", (req, res) => {
+  res.send("Welcome to CCMS backend!")
+})
 
 const PORT = process.env.PORT || 5000
 
