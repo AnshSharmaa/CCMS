@@ -15,31 +15,33 @@ import imagelink from "../Images/main.png"
 import logo from "../Images/Logo.png"
 import Auth from "./Auth/Auth"
 import styles from "../styles/styles"
+import mcgpalette0 from "../styles/colors"
 
 const useStyles = makeStyles({
   container: {
-    margin: "auto",
-    marginTop: "5px",
+    backgroundColor:mcgpalette0['background-color-3'],
   },
   MainDiv: {
     //backgroundImage: 'url('+imagelink+')',
-    backgroundColor: pink[100],
+    backgroundColor: mcgpalette0['background-color'],
   },
   LOGO: {},
   HiText: {
-    color: "white",
+    color: mcgpalette0['text-color-light'],
   },
   feat: {
-    width: "100%",
     marginTop: "20px",
     marginBottom: "20px",
   },
   card: {
+    backgroundColor:mcgpalette0['background-color'],
+    color:mcgpalette0['text-color-light'],
     height: "200px",
     minWidth: "200px",
   },
   started: {
-    backgroundColor: pink[100],
+    backgroundColor: mcgpalette0['background-color'],
+    color: mcgpalette0['text-color-light'],
     height: "200px",
     marginTop: "40px",
     marginBottom: "20px",

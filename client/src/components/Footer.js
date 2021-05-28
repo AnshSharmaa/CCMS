@@ -1,11 +1,13 @@
 import React from "react"
 import { Button, AppBar,Toolbar, Typography,IconButton, Paper, Grid} from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
+import mcgpalette0 from '../styles/colors';
 
 const useStyles = makeStyles({
     footerContainer: {
-        backgroundColor: "#57DAF3",
-        height: "200px"
+        backgroundColor: mcgpalette0['background-color'],
+        color: mcgpalette0['text-color-light'],
+        height: "200px",
     }
 
   });
