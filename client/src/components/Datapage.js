@@ -1,7 +1,7 @@
 import React from "react"
 import { Paper, Grid } from "@material-ui/core"
 import { makeStyles } from "@material-ui/core/styles"
-import Create from "./create"
+import Create from "./Create"
 import Posts from "./Posts/Posts"
 import Profiles from "./Profiles/Profiles"
 

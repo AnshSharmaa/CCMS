@@ -8,6 +8,7 @@ import {
   IconButton,
 } from "@material-ui/core"
 import { makeStyles } from "@material-ui/core/styles"
+import Auth from "./Auth/Auth"
 
 const useStyles = makeStyles({
   siteName: {
@@ -47,6 +48,9 @@ const Header = () => {
         <Button color="inherit" component={Link} to="/data">
           Create/All Data
         </Button>
+
+        <Auth/>
+        
       </Toolbar>
     </AppBar>
   )

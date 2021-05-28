@@ -1,5 +1,6 @@
 import React, { useState } from "react"
 import { GoogleLogin } from "react-google-login"
+import { Button, Typography } from "@material-ui/core"
 
 import Gicon from "./icon"
 
@@ -45,13 +46,16 @@ const Auth = () => {
         <GoogleLogin
           clientId="65050724318-9ost9pd74pn6lcvp7nnm21f6c1lcedd6.apps.googleusercontent.com"
           render={(renderProps) => (
-            <button
+            <Button
+              color="inherit"
               className="Glogin"
               onClick={renderProps.onClick}
               disabled={renderProps.disabled}
             >
-              <Gicon /> Google Sign In
-            </button>
+              <Typography>Sign In</Typography>
+              <div style={{marginLeft:'10px'}}><Gicon /></div>
+              
+            </Button>
           )}
           onSuccess={googleSuccess}
           onFailure={googleFailure}
@@ -59,9 +63,9 @@ const Auth = () => {
         />
       )}
       {user && (
-        <button className="Glogin" onClick={logout}>
+        <Button color="inherit" className="Glogin" onClick={logout}>
           Logout
-        </button>
+        </Button>
       )}
     </div>
   )

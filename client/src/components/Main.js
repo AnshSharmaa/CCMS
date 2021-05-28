@@ -115,7 +115,9 @@ const Main = () => {
         </Typography>
         <Grid container justify="center" spacing={3}>
           <Grid>
-            <Auth />
+            <Paper>
+              <Auth/>
+            </Paper>
           </Grid>
         </Grid>
       </Box>
