@@ -3,12 +3,13 @@ import { GoogleLogin } from "react-google-login"
 import { Button, Typography } from "@material-ui/core"
 
 import Gicon from "./icon"
+import styles from "../../styles/styles"
 
 import "./Auth.css"
 
 const Auth = () => {
   const [user, setUser] = useState(JSON.parse(localStorage.getItem("profile")))
-
+  const stylesClasses = styles();
   const logout = () => {
     // dispatch({ type: actionType.LOGOUT })
 
@@ -48,7 +49,7 @@ const Auth = () => {
           render={(renderProps) => (
             <Button
               color="inherit"
-              className="Glogin"
+              className={stylesClasses.customButtonContained}
               onClick={renderProps.onClick}
               disabled={renderProps.disabled}
             >
@@ -63,7 +64,7 @@ const Auth = () => {
         />
       )}
       {user && (
-        <Button color="inherit" className="Glogin" onClick={logout}>
+        <Button color="inherit" className={stylesClasses.customButtonContained} onClick={logout}>
           Logout
         </Button>
       )}

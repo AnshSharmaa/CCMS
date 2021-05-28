@@ -12,8 +12,11 @@ import {
   Accordion,
   AccordionSummary,
   AccordionDetails,
+  ButtonGroup,
 } from "@material-ui/core"
 import { makeStyles } from "@material-ui/core/styles"
+import mcgpalette0 from "../styles/colors";
+import styles from "../styles/styles";
 
 const useStyles = makeStyles({
   createPostAccord: {
@@ -25,8 +28,9 @@ const useStyles = makeStyles({
 
 const Create = () => {
   const classes = useStyles()
+  const stylesClasses = styles();
   return (
-    <Paper>
+    <Paper style={{backgroundColor: mcgpalette0['background-color']}}>
       <Grid
         container
         direction="row"
@@ -42,7 +46,7 @@ const Create = () => {
           xs={10}
           className={classes.createPostAccord}
         >
-          <Accordion>
+          <Accordion style={{backgroundColor: mcgpalette0['background-color-3']}}>
             <AccordionSummary
               aria-controls="panel1a-content"
               id="panel1a-header"
@@ -79,7 +83,7 @@ const Create = () => {
                     label="Content"
                   />
                   <TextField
-                    style={{ marginTop: "10px", marginBottom: "10px", maxWidth: "400px",}}
+                    style={{ marginTop: "10px", marginBottom: "10px", maxWidth: "200px",}}
                     id="standard-basic"
                     label="Date"
                     type="date"
@@ -87,7 +91,10 @@ const Create = () => {
                       shrink: true,
                     }}
                   />
-                  <Button>Submit</Button>
+                  <Button 
+                  className={stylesClasses.customButtonContained}
+                  style={{marginLeft:'auto'}}
+                  >Submit</Button>
                 </Grid>
               </form>
             </AccordionDetails>
@@ -101,7 +108,7 @@ const Create = () => {
           item
           className={classes.createPostAccord}
         >
-          <Accordion>
+          <Accordion style={{backgroundColor: mcgpalette0['background-color-3']}}>
             <AccordionSummary
               aria-controls="panel1a-content"
               id="panel1a-header"
@@ -131,15 +138,22 @@ const Create = () => {
                     id="standard-basic"
                     label="Content"
                   />
-                  <Button
-                    style={{ marginTop: "10px", marginBottom: "10px" }}
+                  <ButtonGroup style={{marginLeft:"auto"}}>
+                    <Button
+                    className={stylesClasses.customButtonContained}
+                    style={{ marginTop: "0", marginBottom: "0"}}
                     variant="contained"
                     component="label"
-                  >
+                    >
                     Image
                     <input hidden type="file" />
-                  </Button>
-                  <Button>Submit</Button>
+                    </Button>
+                    <Button 
+                    className={stylesClasses.customButtonContained}
+                    style={{marginTop: "0", marginBottom: "0"}}
+                    >Submit</Button>
+                  </ButtonGroup>
+                  
                 </Grid>
               </form>
             </AccordionDetails>

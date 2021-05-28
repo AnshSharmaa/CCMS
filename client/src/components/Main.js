@@ -14,6 +14,7 @@ import { pink, cyan } from "@material-ui/core/colors"
 import imagelink from "../Images/main.png"
 import logo from "../Images/Logo.png"
 import Auth from "./Auth/Auth"
+import styles from "../styles/styles"
 
 const useStyles = makeStyles({
   container: {
@@ -46,7 +47,9 @@ const useStyles = makeStyles({
 })
 
 const Main = () => {
-  const classes = useStyles()
+  const classes = useStyles();
+  const stylesClasses = styles();
+
   return (
     <Paper className={classes.container}>
       <Grid
@@ -115,9 +118,7 @@ const Main = () => {
         </Typography>
         <Grid container justify="center" spacing={3}>
           <Grid>
-            <Paper>
               <Auth/>
-            </Paper>
           </Grid>
         </Grid>
       </Box>

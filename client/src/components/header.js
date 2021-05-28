@@ -9,6 +9,7 @@ import {
 } from "@material-ui/core"
 import { makeStyles } from "@material-ui/core/styles"
 import Auth from "./Auth/Auth"
+import styles from "../styles/styles"
 
 const useStyles = makeStyles({
   siteName: {
@@ -20,6 +21,7 @@ const useStyles = makeStyles({
 
 const Header = () => {
   const classes = useStyles()
+  const stylesClasses = styles()
   return (
     <AppBar
       position="static"
@@ -41,16 +43,16 @@ const Header = () => {
           Custom CMS
         </Typography>
 
-        <Button color="inherit" component={Link} to="/">
+        <Button  className={stylesClasses.customButtonContained} component={Link} to="/">
           Home
         </Button>
 
-        <Button color="inherit" component={Link} to="/data">
+        <Button className={stylesClasses.customButtonContained}  component={Link} to="/data">
           Create/All Data
         </Button>
 
         <Auth/>
-        
+
       </Toolbar>
     </AppBar>
   )
