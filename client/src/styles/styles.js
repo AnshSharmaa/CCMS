@@ -24,7 +24,7 @@ const styles =  makeStyles({
     customButtonContainedSecondary: {
         marginLeft:5,
         marginRight:5,
-        color: mcgpalette0['text-color-light'],
+        color: mcgpalette0['text-color-dark'],
         backgroundColor: mcgpalette0['secondary-color'],
         '&:hover': {
         backgroundColor: mcgpalette0['secondary-color-light']

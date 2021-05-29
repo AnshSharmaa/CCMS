@@ -10,7 +10,7 @@ export const mcgpalette0 = {
     'text-color-dark': "black",
 
     'background-color': "#242121", //Blackout
-    'background-color-2': "",
+    'background-color-2': "#181616",
     'background-color-3': "#F8F3E3",//Daisy White
 
     'contrastDefaultColor': 'light',
