@@ -12,6 +12,7 @@ import {
 import { makeStyles } from "@material-ui/core/styles"
 import styles from "../../styles/styles"
 import mcgpalette0 from "../../styles/colors"
+import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 
 const useStyles = makeStyles({
   createPostAccord: {
@@ -78,7 +79,12 @@ const PostForm = (user) => {
       className={classes.createPostAccord}
     >
       <Accordion style={{ backgroundColor: mcgpalette0["background-color-2"] }}>
-        <AccordionSummary aria-controls="panel1a-content" id="panel1a-header">
+        <AccordionSummary 
+            expandIcon={<ExpandMoreIcon style={{color:mcgpalette0['text-color-light']}}/>}
+            aria-controls="panel2a-content"
+            id="panel2a-header"
+            aria-controls="panel1a-content" 
+            id="panel1a-header">
           <Typography variant="h5" className={classes.heading}>
             Create Post
           </Typography>

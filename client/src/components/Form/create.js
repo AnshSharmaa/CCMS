@@ -1,18 +1,7 @@
 import React from "react"
 import {
-  Button,
-  AppBar,
-  Toolbar,
-  Box,
-  TextareaAutosize,
   Grid,
-  Typography,
-  TextField,
   Paper,
-  Accordion,
-  AccordionSummary,
-  AccordionDetails,
-  ButtonGroup,
 } from "@material-ui/core"
 import { makeStyles } from "@material-ui/core/styles"
 import mcgpalette0 from "../../styles/colors"
