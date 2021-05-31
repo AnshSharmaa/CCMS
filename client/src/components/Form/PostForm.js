@@ -12,6 +12,7 @@ import {
 import { makeStyles } from "@material-ui/core/styles"
 import styles from "../../styles/styles"
 import mcgpalette0 from "../../styles/colors"
+
 const useStyles = makeStyles({
   createPostAccord: {
     marginTop: "20px",
@@ -96,7 +97,11 @@ const PostForm = (user) => {
               <Typography style={{ color: mcgpalette0["text-color-light"] }}>
                 Content
               </Typography>
-              <TextField className={classes.customTextField} />
+              <TextField 
+                fullWidth
+                multiline
+                rows={4}
+                className={classes.customTextField} />
               <Typography style={{ color: mcgpalette0["text-color-light"] }}>
                 Date
               </Typography>
