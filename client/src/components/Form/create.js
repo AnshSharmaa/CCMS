@@ -17,6 +17,7 @@ import {
 import { makeStyles } from "@material-ui/core/styles"
 import mcgpalette0 from "../../styles/colors"
 import styles from "../../styles/styles"
+import PostForm from "./PostForm"
 
 const useStyles = makeStyles({
   createPostAccord: {
@@ -49,74 +50,7 @@ const Create = () => {
         alignItems="flex-start"
         style={{ marginTop: "20px", marginBottom: "20px" }}
       >
-        <Grid
-          item
-          lg={5}
-          md={5}
-          sm={8}
-          xs={10}
-          className={classes.createPostAccord}
-        >
-          <Accordion
-            style={{ backgroundColor: mcgpalette0["background-color-2"] }}
-          >
-            <AccordionSummary
-              aria-controls="panel1a-content"
-              id="panel1a-header"
-            >
-              <Typography variant="h5" className={classes.heading}>
-                Create Post
-              </Typography>
-            </AccordionSummary>
-            <AccordionDetails>
-              <form style={{ width: "100%" }}>
-                <Grid container direction="column" justify="space-evenly">
-                  <Typography
-                    style={{ color: mcgpalette0["text-color-light"] }}
-                  >
-                    Title
-                  </Typography>
-                  <TextField className={classes.customTextField} />
-                  <Typography
-                    style={{ color: mcgpalette0["text-color-light"] }}
-                  >
-                    Author
-                  </Typography>
-                  <TextField className={classes.customTextField} />
-                  <Typography
-                    style={{ color: mcgpalette0["text-color-light"] }}
-                  >
-                    Content
-                  </Typography>
-                  <TextField className={classes.customTextField} />
-                  <Typography
-                    style={{ color: mcgpalette0["text-color-light"] }}
-                  >
-                    Date
-                  </Typography>
-                  <TextField
-                    style={{
-                      marginTop: "10px",
-                      marginBottom: "10px",
-                      maxWidth: "150px",
-                    }}
-                    className={classes.customTextField}
-                    type="date"
-                    InputLabelProps={{
-                      shrink: true,
-                    }}
-                  />
-                  <Button
-                    className={stylesClasses.customButtonContainedSecondary}
-                    style={{ marginLeft: "auto" }}
-                  >
-                    Submit
-                  </Button>
-                </Grid>
-              </form>
-            </AccordionDetails>
-          </Accordion>
-        </Grid>
+        <PostForm />
         <Grid
           lg={4}
           md={5}
