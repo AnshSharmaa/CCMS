@@ -1,6 +1,10 @@
 import React from "react"
 import {
   Button,
+  AppBar,
+  Toolbar,
+  Box,
+  TextareaAutosize,
   Grid,
   Typography,
   TextField,
@@ -19,6 +23,17 @@ const useStyles = makeStyles({
     marginTop: "20px",
     marginBottom: "20px",
     maxWidth: "1200px",
+  },
+  heading: {
+    color: mcgpalette0["text-color-light"],
+  },
+  customTextField: {
+    marginTop: "10px",
+    marginBottom: "10px",
+    maxWidth: "400px",
+    padding: 5,
+    borderRadius: 5,
+    backgroundColor: mcgpalette0["background-color-3"],
   },
 })
 
@@ -43,58 +58,56 @@ const Create = () => {
           className={classes.createPostAccord}
         >
           <Accordion
-            style={{ backgroundColor: mcgpalette0["background-color-3"] }}
+            style={{ backgroundColor: mcgpalette0["background-color-2"] }}
           >
             <AccordionSummary
               aria-controls="panel1a-content"
               id="panel1a-header"
             >
-              <Typography className={classes.heading}>Create Post</Typography>
+              <Typography variant="h5" className={classes.heading}>
+                Create Post
+              </Typography>
             </AccordionSummary>
             <AccordionDetails>
               <form style={{ width: "100%" }}>
                 <Grid container direction="column" justify="space-evenly">
+                  <Typography
+                    style={{ color: mcgpalette0["text-color-light"] }}
+                  >
+                    Title
+                  </Typography>
+                  <TextField className={classes.customTextField} />
+                  <Typography
+                    style={{ color: mcgpalette0["text-color-light"] }}
+                  >
+                    Author
+                  </Typography>
+                  <TextField className={classes.customTextField} />
+                  <Typography
+                    style={{ color: mcgpalette0["text-color-light"] }}
+                  >
+                    Content
+                  </Typography>
+                  <TextField className={classes.customTextField} />
+                  <Typography
+                    style={{ color: mcgpalette0["text-color-light"] }}
+                  >
+                    Date
+                  </Typography>
                   <TextField
                     style={{
                       marginTop: "10px",
                       marginBottom: "10px",
-                      maxWidth: "400px",
+                      maxWidth: "150px",
                     }}
-                    id="standard-basic"
-                    label="Title"
-                  />
-                  <TextField
-                    style={{
-                      marginTop: "10px",
-                      marginBottom: "10px",
-                      maxWidth: "400px",
-                    }}
-                    id="standard-basic"
-                    label="Author"
-                  />
-                  <TextField
-                    fullWidth
-                    multiline
-                    rows={4}
-                    style={{ marginTop: "10px", marginBottom: "10px" }}
-                    id="standard-basic"
-                    label="Content"
-                  />
-                  <TextField
-                    style={{
-                      marginTop: "10px",
-                      marginBottom: "10px",
-                      maxWidth: "200px",
-                    }}
-                    id="standard-basic"
-                    label="Date"
+                    className={classes.customTextField}
                     type="date"
                     InputLabelProps={{
                       shrink: true,
                     }}
                   />
                   <Button
-                    className={stylesClasses.customButtonContained}
+                    className={stylesClasses.customButtonContainedSecondary}
                     style={{ marginLeft: "auto" }}
                   >
                     Submit
@@ -113,7 +126,7 @@ const Create = () => {
           className={classes.createPostAccord}
         >
           <Accordion
-            style={{ backgroundColor: mcgpalette0["background-color-3"] }}
+            style={{ backgroundColor: mcgpalette0["background-color-2"] }}
           >
             <AccordionSummary
               aria-controls="panel1a-content"
@@ -126,27 +139,32 @@ const Create = () => {
             <AccordionDetails>
               <form style={{ width: "100%" }}>
                 <Grid container direction="column" justify="space-evenly">
-                  <TextField
-                    style={{ marginTop: "10px", marginBottom: "10px" }}
-                    id="standard-basic"
-                    label="Name"
-                  />
-                  <TextField
-                    style={{ marginTop: "10px", marginBottom: "10px" }}
-                    id="standard-basic"
-                    label="Designation"
-                  />
+                  <Typography
+                    style={{ color: mcgpalette0["text-color-light"] }}
+                  >
+                    Name
+                  </Typography>
+                  <TextField className={classes.customTextField} />
+                  <Typography
+                    style={{ color: mcgpalette0["text-color-light"] }}
+                  >
+                    Designation
+                  </Typography>
+                  <TextField className={classes.customTextField} />
+                  <Typography
+                    style={{ color: mcgpalette0["text-color-light"] }}
+                  >
+                    Content
+                  </Typography>
                   <TextField
                     fullWidth
                     multiline
                     rows={4}
-                    style={{ marginTop: "10px", marginBottom: "10px" }}
-                    id="standard-basic"
-                    label="Content"
+                    className={classes.customTextField}
                   />
                   <ButtonGroup style={{ marginLeft: "auto" }}>
                     <Button
-                      className={stylesClasses.customButtonContained}
+                      className={stylesClasses.customButtonContainedSecondary}
                       style={{ marginTop: "0", marginBottom: "0" }}
                       variant="contained"
                       component="label"
@@ -155,7 +173,7 @@ const Create = () => {
                       <input hidden type="file" />
                     </Button>
                     <Button
-                      className={stylesClasses.customButtonContained}
+                      className={stylesClasses.customButtonContainedSecondary}
                       style={{ marginTop: "0", marginBottom: "0" }}
                     >
                       Submit
