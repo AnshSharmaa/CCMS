@@ -7,41 +7,37 @@ import {
   CardContent,
   Container,
   Typography,
-  Button,
 } from "@material-ui/core"
 import { makeStyles } from "@material-ui/core/styles"
-import { pink, cyan } from "@material-ui/core/colors"
-import imagelink from "../Images/main.png"
 import logo from "../Images/Logo.png"
 import Auth from "./Auth/Auth"
-import styles from "../styles/styles"
 import mcgpalette0 from "../styles/colors"
 
 const useStyles = makeStyles({
   container: {
-    backgroundColor:mcgpalette0['background-color-3'],
+    backgroundColor: mcgpalette0["background-color-3"],
   },
   MainDiv: {
     //backgroundImage: 'url('+imagelink+')',
-    backgroundColor: mcgpalette0['background-color'],
+    backgroundColor: mcgpalette0["background-color"],
   },
   LOGO: {},
   HiText: {
-    color: mcgpalette0['text-color-light'],
+    color: mcgpalette0["text-color-light"],
   },
   feat: {
     marginTop: "20px",
     marginBottom: "20px",
   },
   card: {
-    backgroundColor:mcgpalette0['background-color'],
-    color:mcgpalette0['text-color-light'],
+    backgroundColor: mcgpalette0["background-color"],
+    color: mcgpalette0["text-color-light"],
     height: "200px",
     minWidth: "200px",
   },
   started: {
-    backgroundColor: mcgpalette0['background-color'],
-    color: mcgpalette0['text-color-light'],
+    backgroundColor: mcgpalette0["background-color"],
+    color: mcgpalette0["text-color-light"],
     height: "200px",
     marginTop: "40px",
     marginBottom: "20px",
@@ -49,8 +45,7 @@ const useStyles = makeStyles({
 })
 
 const Main = () => {
-  const classes = useStyles();
-  const stylesClasses = styles();
+  const classes = useStyles()
 
   return (
     <Paper className={classes.container}>
@@ -62,7 +57,7 @@ const Main = () => {
         className={classes.MainDiv}
       >
         <Grid item className={classes.LOGO}>
-          <img src={logo}></img>
+          <img src={logo} alt="logo"></img>
         </Grid>
         <Typography variant="h4" className={classes.HiText}>
           Hi, Welcome to Custom CMS
@@ -120,7 +115,7 @@ const Main = () => {
         </Typography>
         <Grid container justify="center" spacing={3}>
           <Grid>
-              <Auth/>
+            <Auth />
           </Grid>
         </Grid>
       </Box>

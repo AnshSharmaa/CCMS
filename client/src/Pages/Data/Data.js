@@ -1,17 +1,14 @@
 import React from "react"
 import Header from "../../components/header"
-import { makeStyles } from "@material-ui/core/styles"
 import Datapage from "../../components/Datapage"
 import Footer from "../../components/Footer"
 import { createMuiTheme, ThemeProvider } from "@material-ui/core"
 
-const theme = createMuiTheme({
-  
-})
+const theme = createMuiTheme({})
 
 function Data() {
   return (
-    <ThemeProvider>
+    <ThemeProvider theme={theme}>
       <Header />
       <Datapage />
       <Footer />

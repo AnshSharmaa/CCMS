@@ -1,7 +1,7 @@
 import React from "react"
 import Home from "./Pages/Home/Home"
 import Data from "./Pages/Data/Data"
-import { Route, BrowserRouter as Router, Link, Switch } from "react-router-dom"
+import { Route, BrowserRouter as Router, Switch } from "react-router-dom"
 
 function App() {
   return (
