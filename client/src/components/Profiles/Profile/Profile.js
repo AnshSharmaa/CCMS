@@ -27,7 +27,7 @@ const useStyles = makeStyles({
 
 const Profile = (profile) => {
   const classes = useStyles()
-  console.log(profile)
+
   return (
     <Card className={classes.root}>
       <CardContent>
