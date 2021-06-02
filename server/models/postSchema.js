@@ -4,7 +4,7 @@ const postSchema = mongoose.Schema({
   Title: String,
   Author: String,
   Content: String,
-  Date: String,
+  Date: Date,
 })
 
 const PostSchema = mongoose.model("PostSchema", postSchema)
