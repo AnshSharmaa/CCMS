@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from "react"
-import {Button, Grid, Typography, TextField, Accordion, AccordionSummary, AccordionDetails} from "@material-ui/core"
+import {Button, Box, Grid, Typography, TextField, Accordion, AccordionSummary, AccordionDetails} from "@material-ui/core"
 import {makeStyles} from "@material-ui/core/styles"
 import styles from "../../styles/styles"
 import mcgpalette0 from "../../styles/colors"
@@ -84,13 +84,16 @@ const PostForm = (user) => {
               <Typography style={{color: mcgpalette0["text-color-light"]}}>Date</Typography>
               <TextField style={{marginTop: "10px", marginBottom: "10px", maxWidth: "150px"}} className={classes.customTextField} type='date' InputLabelProps={{shrink: true}} name='Date' onChange={(e) => setPostData({...postData, Date: e.target.value})} />
 
-              <Button className={stylesClasses.customButtonContainedSecondary} style={{marginLeft: "auto"}} type='submit'>
+              <div style={{marginLeft: "auto"}}>
+                <Button className={stylesClasses.customButtonContainedSecondary} type='submit'>
                 Submit
               </Button>
 
               <Button className={stylesClasses.customButtonContainedSecondary} onClick={clearPost}>
                 Clear
               </Button>
+              </div>
+              
             </form>
           </Grid>
         </AccordionDetails>

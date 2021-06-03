@@ -6,25 +6,10 @@ import mcgpalette0 from "../../styles/colors"
 
 const Edit = () => {
   const stylesClasses = styles()
-
-  var dateHash = {
-    Jan: "01",
-    Feb: "02",
-    Mar: "03",
-    Apr: "04",
-    May: "05",
-    Jun: "06",
-    Jul: "07",
-    Aug: "08",
-    Sep: "09",
-    Oct: "10",
-    Nov: "11",
-    Dec: "12",
-  }
   const location = useLocation()
   const {post} = location.state
-  const postD = post.Date.split(" ")
-  const date = postD[3] + "-" + dateHash[postD[1]] + "-" + postD[2]
+  const postD = post.Date.split("-")
+  const date = postD[0] + "-" + postD[1] + "-" + postD[2].split('T')[0]
   return (
     <form>
       <Grid style={{marginTop: 20}} container justify='center' alignItems='center'>

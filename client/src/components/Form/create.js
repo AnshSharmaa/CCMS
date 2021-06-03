@@ -9,8 +9,8 @@ const Create = () => {
   const [user] = useState(JSON.parse(localStorage.getItem("profile")))
   if (!user?.result?.name) {
     return (
-      <Paper style={{backgroundColor: mcgpalette0["background-color"]}}>
-        <Typography variant='h6' align='center' style={{color: "white"}}>
+      <Paper style={{backgroundColor: mcgpalette0["background-color"],height:'100px'}}>
+        <Typography variant='h6' align='center' style={{color: "white",marginTop:50}}>
           You need to Sign In to create or edit data.
         </Typography>
       </Paper>
