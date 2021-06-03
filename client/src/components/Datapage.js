@@ -11,12 +11,12 @@ import mcgpalette0 from "../styles/colors"
 const useStyles = makeStyles({
   cardPost: {
     padding: "10px",
-    backgroundColor: mcgpalette0["background-color-3"],
+    backgroundColor: mcgpalette0["background-color-2"],
     color: mcgpalette0["text-color-dark"],
   },
   cardProfile: {
     padding: "10px",
-    backgroundColor: mcgpalette0["background-color-3"],
+    backgroundColor: mcgpalette0["background-color-2"],
     color: mcgpalette0["text-color-dark"],
   },
 })
@@ -32,7 +32,10 @@ const Datapage = () => {
       <Grid>
         <Create />
       </Grid>
-      <Paper className={stylesClasses.customBackground}>
+      <Paper
+        className={stylesClasses.customBackground}
+        style={{ marginTop: "2em" }}
+      >
         <Grid container direction="row" justify="center">
           <Grid container style={{ maxWidth: "1000px" }}>
             <Grid item className={classes.cardPost}>
