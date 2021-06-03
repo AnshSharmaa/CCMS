@@ -1,17 +1,10 @@
-import React, { useState, useEffect } from "react"
-import {
-  Button,
-  Grid,
-  Typography,
-  TextField,
-  Accordion,
-  AccordionSummary,
-  AccordionDetails,
-} from "@material-ui/core"
-import { makeStyles } from "@material-ui/core/styles"
+import React, {useState, useEffect} from "react"
+import {Button, Grid, Typography, TextField, Accordion, AccordionSummary, AccordionDetails} from "@material-ui/core"
+import {makeStyles} from "@material-ui/core/styles"
 import styles from "../../styles/styles"
 import mcgpalette0 from "../../styles/colors"
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore"
+import {createPost} from "../../api/api"
 
 const useStyles = makeStyles({
   createPostAccord: {
@@ -47,95 +40,59 @@ const PostForm = (user) => {
   }, [postData])
 
   const clearPost = () => {
-    // setCurrentId(0)
     setPostData({
       Title: "",
       Author: "",
       Content: "",
       Date: "",
     })
-    var file = document.getElementsByTagName("input")
-    file[0].value = ""
   }
 
   const handleSubmitPost = async (e) => {
     e.preventDefault()
-
-    // if (currentId === 0) {
-    //   dispatch(createPost({ ...postData, name: user?.result?.name }))
-    // } else {
-    //   dispatch(updatePost(currentId, { ...postData, name: user?.result?.name }))
-    // }
+    await createPost(postData)
+      .then((response) => {
+        console.log(response)
+        window.location.reload()
+      })
+      .catch((error) => {
+        console.error("Error making post: ", error)
+      })
     clearPost()
   }
+
   return (
-    <Grid
-      item
-      lg={5}
-      md={5}
-      sm={8}
-      xs={10}
-      className={classes.createPostAccord}
-    >
-      <Accordion style={{ backgroundColor: mcgpalette0["background-color-2"] }}>
-        <AccordionSummary
-          expandIcon={
-            <ExpandMoreIcon
-              style={{ color: mcgpalette0["text-color-light"] }}
-            />
-          }
-          aria-controls="panel2a-content"
-          id="panel2a-header"
-          aria-controls="panel1a-content"
-          id="panel1a-header"
-        >
-          <Typography variant="h5" className={classes.heading}>
+    <Grid item lg={5} md={5} sm={8} xs={10} className={classes.createPostAccord}>
+      <Accordion style={{backgroundColor: mcgpalette0["background-color-2"]}}>
+        <AccordionSummary expandIcon={<ExpandMoreIcon style={{color: mcgpalette0["text-color-light"]}} />} aria-controls='panel1a-content' id='panel1a-header'>
+          <Typography variant='h5' className={classes.heading}>
             Create Post
           </Typography>
         </AccordionSummary>
         <AccordionDetails>
-          <form style={{ width: "100%" }}>
-            <Grid container direction="column" justify="space-evenly">
-              <Typography style={{ color: mcgpalette0["text-color-light"] }}>
-                Title
-              </Typography>
-              <TextField className={classes.customTextField} />
-              <Typography style={{ color: mcgpalette0["text-color-light"] }}>
-                Author
-              </Typography>
-              <TextField className={classes.customTextField} />
-              <Typography style={{ color: mcgpalette0["text-color-light"] }}>
-                Content
-              </Typography>
-              <TextField
-                fullWidth
-                multiline
-                rows={4}
-                className={classes.customTextField}
-              />
-              <Typography style={{ color: mcgpalette0["text-color-light"] }}>
-                Date
-              </Typography>
-              <TextField
-                style={{
-                  marginTop: "10px",
-                  marginBottom: "10px",
-                  maxWidth: "150px",
-                }}
-                className={classes.customTextField}
-                type="date"
-                InputLabelProps={{
-                  shrink: true,
-                }}
-              />
-              <Button
-                className={stylesClasses.customButtonContainedSecondary}
-                style={{ marginLeft: "auto" }}
-              >
+          <Grid container direction='column' justify='space-evenly'>
+            <form style={{width: "100%"}} onSubmit={handleSubmitPost}>
+              <Typography style={{color: mcgpalette0["text-color-light"]}}>Title</Typography>
+              <TextField className={classes.customTextField} name='Title' onChange={(e) => setPostData({...postData, Title: e.target.value})} />
+
+              <Typography style={{color: mcgpalette0["text-color-light"]}}>Author</Typography>
+              <TextField className={classes.customTextField} name='Author' onChange={(e) => setPostData({...postData, Author: e.target.value})} />
+
+              <Typography style={{color: mcgpalette0["text-color-light"]}}>Content</Typography>
+              <TextField fullWidth multiline rows={4} className={classes.customTextField} name='Content' onChange={(e) => setPostData({...postData, Content: e.target.value})} />
+
+              <Typography style={{color: mcgpalette0["text-color-light"]}}>Date</Typography>
+              <TextField style={{marginTop: "10px", marginBottom: "10px", maxWidth: "150px"}} className={classes.customTextField} type='date' InputLabelProps={{shrink: true}} name='Date' onChange={(e) => setPostData({...postData, Date: e.target.value})} />
+
+              <Button className={stylesClasses.customButtonContainedSecondary} style={{marginLeft: "auto"}} type='submit'>
                 Submit
               </Button>
-            </Grid>
-          </form>
+
+              <Button className={stylesClasses.customButtonContainedSecondary} onClick={clearPost}>
+                Clear
+              </Button>
+            </form>
+          </Grid>
         </AccordionDetails>
       </Accordion>
     </Grid>

@@ -1,6 +1,6 @@
-import React, { useState } from "react"
-import { GoogleLogin } from "react-google-login"
-import { Button, Typography } from "@material-ui/core"
+import React, {useState} from "react"
+import {GoogleLogin} from "react-google-login"
+import {Button, Typography} from "@material-ui/core"
 
 import Gicon from "./icon"
 import styles from "../../styles/styles"
@@ -9,22 +9,23 @@ import "./Auth.css"
 
 const Auth = () => {
   const [user, setUser] = useState(JSON.parse(localStorage.getItem("profile")))
-  const stylesClasses = styles();
+  const stylesClasses = styles()
   const logout = () => {
     // dispatch({ type: actionType.LOGOUT })
 
     // history.push("/auth")
     localStorage.clear()
     setUser(null)
+    window.location.reload()
   }
 
   const googleSuccess = async (res) => {
     const result = res?.profileObj
     const token = res?.tokenId
 
-    localStorage.setItem("profile", JSON.stringify({ result, token }))
+    localStorage.setItem("profile", JSON.stringify({result, token}))
     setUser(result, token)
-
+    window.location.reload()
     console.log(result)
     console.log(token)
 
@@ -42,29 +43,25 @@ const Auth = () => {
   }
 
   return (
-    <div className="GoogleButton">
+    <div className='GoogleButton'>
       {!user && (
         <GoogleLogin
-          clientId="65050724318-9ost9pd74pn6lcvp7nnm21f6c1lcedd6.apps.googleusercontent.com"
+          clientId='65050724318-9ost9pd74pn6lcvp7nnm21f6c1lcedd6.apps.googleusercontent.com'
           render={(renderProps) => (
-            <Button
-              color="inherit"
-              className={stylesClasses.customButtonContained}
-              onClick={renderProps.onClick}
-              disabled={renderProps.disabled}
-            >
+            <Button color='inherit' className={stylesClasses.customButtonContained} onClick={renderProps.onClick} disabled={renderProps.disabled}>
               <Typography>Sign In</Typography>
-              <div style={{marginLeft:'10px'}}><Gicon /></div>
-              
+              <div style={{marginLeft: "10px"}}>
+                <Gicon />
+              </div>
             </Button>
           )}
           onSuccess={googleSuccess}
           onFailure={googleFailure}
-          cookiePolicy="single_host_origin"
+          cookiePolicy='single_host_origin'
         />
       )}
       {user && (
-        <Button color="inherit" className={stylesClasses.customButtonContained} onClick={logout}>
+        <Button color='inherit' className={stylesClasses.customButtonContained} onClick={logout}>
           Logout
         </Button>
       )}
