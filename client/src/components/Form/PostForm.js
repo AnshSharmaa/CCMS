@@ -73,16 +73,16 @@ const PostForm = (user) => {
           <Grid container direction='column' justify='space-evenly'>
             <form style={{width: "100%"}} onSubmit={handleSubmitPost}>
               <Typography style={{color: mcgpalette0["text-color-light"]}}>Title</Typography>
-              <TextField className={classes.customTextField} name='Title' onChange={(e) => setPostData({...postData, Title: e.target.value})} />
+              <TextField required className={classes.customTextField} name='Title' onChange={(e) => setPostData({...postData, Title: e.target.value})} />
 
               <Typography style={{color: mcgpalette0["text-color-light"]}}>Author</Typography>
-              <TextField className={classes.customTextField} name='Author' onChange={(e) => setPostData({...postData, Author: e.target.value})} />
+              <TextField required className={classes.customTextField} name='Author' onChange={(e) => setPostData({...postData, Author: e.target.value})} />
 
               <Typography style={{color: mcgpalette0["text-color-light"]}}>Content</Typography>
-              <TextField fullWidth multiline rows={4} className={classes.customTextField} name='Content' onChange={(e) => setPostData({...postData, Content: e.target.value})} />
+              <TextField required fullWidth multiline rows={4} className={classes.customTextField} name='Content' onChange={(e) => setPostData({...postData, Content: e.target.value})} />
 
               <Typography style={{color: mcgpalette0["text-color-light"]}}>Date</Typography>
-              <TextField style={{marginTop: "10px", marginBottom: "10px", maxWidth: "150px"}} className={classes.customTextField} type='date' InputLabelProps={{shrink: true}} name='Date' onChange={(e) => setPostData({...postData, Date: e.target.value})} />
+              <TextField required style={{marginTop: "10px", marginBottom: "10px", maxWidth: "150px"}} className={classes.customTextField} type='date' InputLabelProps={{shrink: true}} name='Date' onChange={(e) => setPostData({...postData, Date: e.target.value})} />
 
               <div style={{marginLeft: "auto"}}>
                 <Button className={stylesClasses.customButtonContainedSecondary} type='submit'>

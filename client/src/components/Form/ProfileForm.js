@@ -5,6 +5,7 @@ import FileBase from "react-file-base64"
 import styles from "../../styles/styles"
 import mcgpalette0 from "../../styles/colors"
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore"
+import ImageIcon from '@material-ui/icons/Image';
 
 const useStyles = makeStyles({
   createPostAccord: {
@@ -68,14 +69,14 @@ const ProfileForm = (user) => {
           <form style={{width: "100%"}}>
             <Grid container direction='column' justify='space-evenly'>
               <Typography style={{color: mcgpalette0["text-color-light"]}}>Name</Typography>
-              <TextField className={classes.customTextField} />
+              <TextField required className={classes.customTextField} />
               <Typography style={{color: mcgpalette0["text-color-light"]}}>Designation</Typography>
-              <TextField className={classes.customTextField} />
+              <TextField required className={classes.customTextField} />
               <Typography style={{color: mcgpalette0["text-color-light"]}}>Content</Typography>
-              <TextField fullWidth multiline rows={4} className={classes.customTextField} />
+              <TextField required fullWidth multiline rows={4} className={classes.customTextField} />
               <ButtonGroup style={{marginLeft: "auto"}}>
                 <Button className={stylesClasses.customButtonContainedSecondary} style={{marginTop: "0", marginBottom: "0"}} variant='contained' component='label'>
-                  Image
+                  <ImageIcon/>
                   <input hidden type='file' />
                 </Button>
                 <Button className={stylesClasses.customButtonContainedSecondary} style={{marginTop: "0", marginBottom: "0"}}>

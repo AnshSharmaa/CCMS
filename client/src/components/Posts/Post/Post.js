@@ -1,5 +1,6 @@
 import React from "react"
 import {useHistory} from "react-router-dom"
+import Grid from '@material-ui/core/Grid'
 import Card from "@material-ui/core/Card"
 import CardContent from "@material-ui/core/CardContent"
 import Typography from "@material-ui/core/Typography"
@@ -7,6 +8,7 @@ import {makeStyles} from "@material-ui/core/styles"
 import {Link} from "react-router-dom"
 import {Button} from "@material-ui/core"
 import {deletePost} from "../../../api/api"
+import DeleteForeverIcon from '@material-ui/icons/DeleteForever';
 
 const useStyles = makeStyles({
   root: {
@@ -51,20 +53,30 @@ const Post = (post) => {
       style={{textDecoration: "none"}}>
       <Card className={classes.root}>
         <CardContent>
-          <Typography variant='h5' component='h2'>
-            {post.post.Title}
-          </Typography>
+          <Grid 
+          container
+          justify="space-between"
+          >
+            <Grid item>
+              <Typography variant='h5' component='h2'>
+                {post.post.Title}
+              </Typography>
+            </Grid>
+            <Grid>
+              <Typography variant='body2' component='p'>
+                {date}
+              </Typography>
+            </Grid>
+          </Grid>
           <Typography className={classes.pos} color='textSecondary'>
             {post.post.Author}
           </Typography>
           <Typography variant='body2' component='p'>
             {post.post.Content}
           </Typography>
-          <Typography variant='body2' component='p'>
-            {date}
-          </Typography>
+          
         </CardContent>
-        <Button onClick={DeletePost}>Del</Button>
+        <Button onClick={DeletePost}><DeleteForeverIcon/></Button>
       </Card>
     </Link>
   )
