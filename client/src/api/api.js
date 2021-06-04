@@ -12,9 +12,9 @@ API.interceptors.request.use((req) => {
 export const fetchPosts = () => API.get("/posts")
 export const createPost = (newPost) => API.post("/posts", newPost)
 export const updatePost = (id, updatedPost) => API.patch(`/post/${id}`, updatedPost)
-export const deletePost = (id) => API.delete(`/posts/${id}`)
+export const deletePost = (id) => API.delete(`/post/${id}`)
 
 export const fetchProfiles = () => API.get("/profiles")
 export const createProfiles = (newPost) => API.post("/profiles", newPost)
-export const updateProfiles = (id, updatedPost) => API.patch(`/profiles/${id}`, updatedPost)
-export const deleteProfiles = (id) => API.delete(`/profiles/${id}`)
+export const updateProfiles = (id, updatedPost) => API.patch(`/profile/${id}`, updatedPost)
+export const deleteProfiles = (id) => API.delete(`/profile/${id}`)
