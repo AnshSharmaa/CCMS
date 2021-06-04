@@ -36,17 +36,13 @@ const Datapage = () => {
         className={stylesClasses.customBackground}
         style={{ marginTop: "2em" }}
       >
-        <Grid container direction="row" justify="center">
-          <Grid container style={{ maxWidth: "1000px" }}>
-            <Grid item className={classes.cardPost}>
+        <Grid container direction="row" alignItems="flex-start" justify="space-between">
+            <Grid lg={7} md={7} sm={12} xs={12} item className={classes.cardPost}>
               <Posts />
             </Grid>
-          </Grid>
-          <Grid container style={{ maxWidth: "700px" }}>
-            <Grid item className={classes.cardProfile}>
+            <Grid lg={5} md={5} sm={12} xs={12} item className={classes.cardProfile}>
               <Profiles />
             </Grid>
-          </Grid>
         </Grid>
       </Paper>
     </Paper>

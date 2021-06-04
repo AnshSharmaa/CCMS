@@ -63,6 +63,7 @@ const Post = (post) => {
             <Grid>
               <Typography variant='body2' component='p'>
                 {date}
+                <Button style={{marginLeft:'auto'}} onClick={DeletePost}><DeleteForeverIcon/></Button>
               </Typography>
             </Grid>
           </Grid>
@@ -73,9 +74,6 @@ const Post = (post) => {
             {post.post.Content}
           </Typography>
         </CardContent>
-        <Button onClick={DeletePost}>
-          <DeleteForeverIcon />
-        </Button>
       </Card>
     </Link>
   )
