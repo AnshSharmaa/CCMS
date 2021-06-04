@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from "react"
-import {Button, Box, Grid, Typography, TextField, Accordion, AccordionSummary, AccordionDetails} from "@material-ui/core"
+import {Button, Grid, Typography, TextField, Accordion, AccordionSummary, AccordionDetails} from "@material-ui/core"
 import {makeStyles} from "@material-ui/core/styles"
 import styles from "../../styles/styles"
 import mcgpalette0 from "../../styles/colors"
@@ -86,14 +86,9 @@ const PostForm = (user) => {
 
               <div style={{marginLeft: "auto"}}>
                 <Button className={stylesClasses.customButtonContainedSecondary} type='submit'>
-                Submit
-              </Button>
-
-              <Button className={stylesClasses.customButtonContainedSecondary} onClick={clearPost}>
-                Clear
-              </Button>
+                  Submit
+                </Button>
               </div>
-              
             </form>
           </Grid>
         </AccordionDetails>

@@ -24,6 +24,8 @@ const useStyles = makeStyles({
 
 const Post = (post) => {
   const classes = useStyles()
+  const postD = post.post.Date.split("-")
+  const date = postD[0] + "-" + postD[1] + "-" + postD[2].split("T")[0]
   return (
     <Link
       to={{
@@ -43,7 +45,7 @@ const Post = (post) => {
             {post.post.Content}
           </Typography>
           <Typography variant='body2' component='p'>
-            {post.post.Date}
+            {date}
           </Typography>
         </CardContent>
       </Card>
