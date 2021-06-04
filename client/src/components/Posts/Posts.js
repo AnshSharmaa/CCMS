@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from "react"
-import { makeStyles } from "@material-ui/core/styles"
-import { Grid, CircularProgress } from "@material-ui/core"
+import React, {useState, useEffect} from "react"
+import {makeStyles} from "@material-ui/core/styles"
+import {Grid, CircularProgress} from "@material-ui/core"
 import Post from "./Post/Post"
-import * as api from "../../api/api"
+import {fetchPosts} from "../../api/api"
 
 const useStyles = makeStyles({
   root: {
@@ -23,16 +23,14 @@ const useStyles = makeStyles({
 
 const Posts = () => {
   const classes = useStyles()
-  const [posts, setPosts] = useState({ posts: [] })
+  const [posts, setPosts] = useState({posts: []})
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState(null)
   useEffect(() => {
     getData()
   }, [])
-
   async function getData() {
-    await api
-      .fetchPosts()
+    await fetchPosts()
       .then((response) => {
         setPosts(response.data)
       })
@@ -49,12 +47,7 @@ const Posts = () => {
   return !posts.length ? (
     <CircularProgress />
   ) : (
-    <Grid
-      className={classes.container}
-      container
-      alignItems="stretch"
-      spacing={3}
-    >
+    <Grid className={classes.container} container alignItems='stretch' spacing={3}>
       {posts.map((post) => (
         <Grid key={post._id} item xs={12} sm={6} md={6}>
           <Post post={post} />
