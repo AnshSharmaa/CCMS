@@ -11,27 +11,21 @@ const Auth = () => {
   const [user, setUser] = useState(JSON.parse(localStorage.getItem("profile")))
   const stylesClasses = styles()
   const logout = () => {
-    // dispatch({ type: actionType.LOGOUT })
-
-    // history.push("/auth")
     localStorage.clear()
     setUser(null)
     window.location.reload()
   }
 
   const googleSuccess = async (res) => {
-    const result = res?.profileObj
-    const token = res?.tokenId
-
-    localStorage.setItem("profile", JSON.stringify({result, token}))
-    setUser(result, token)
-    window.location.reload()
-    console.log(result)
-    console.log(token)
-
     try {
-      //dispatch({ type: "AUTH", data: { result, token } })
-      //history.push("/")
+      const result = res?.profileObj
+      const token = res?.tokenId
+
+      localStorage.setItem("profile", JSON.stringify({result, token}))
+      setUser(result, token)
+      window.location.reload()
+      console.log(result)
+      console.log(token)
     } catch (error) {
       console.log(error)
     }

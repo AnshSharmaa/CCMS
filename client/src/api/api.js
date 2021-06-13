@@ -15,6 +15,6 @@ export const updatePost = (id, updatedPost) => API.patch(`/post/${id}`, updatedP
 export const deletePost = (id) => API.delete(`/post/${id}`)
 
 export const fetchProfiles = () => API.get("/profiles")
-export const createProfiles = (newPost) => API.post("/profiles", newPost)
-export const updateProfiles = (id, updatedPost) => API.patch(`/profile/${id}`, updatedPost)
-export const deleteProfiles = (id) => API.delete(`/profile/${id}`)
+export const createProfile = (newPost) => API.post("/profiles", newPost)
+export const updateProfile = (id, updatedPost) => API.patch(`/profile/${id}`, updatedPost)
+export const deleteProfile = (id) => API.delete(`/profile/${id}`)

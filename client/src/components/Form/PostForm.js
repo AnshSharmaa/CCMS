@@ -35,9 +35,9 @@ const PostForm = (user) => {
     Date: "",
   })
 
-  useEffect(() => {
-    if (postData) setPostData(postData)
-  }, [postData])
+  // useEffect(() => {
+  //   if (postData) setPostData(postData)
+  // }, [postData])
 
   const clearPost = () => {
     setPostData({

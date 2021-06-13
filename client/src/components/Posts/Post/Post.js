@@ -44,7 +44,6 @@ const Post = (post) => {
 
     history.push("/data")
   }
-  console.log(post)
   return (
     <Link
       to={{
@@ -63,7 +62,9 @@ const Post = (post) => {
             <Grid>
               <Typography variant='body2' component='p'>
                 {date}
-                <Button style={{marginLeft:'auto'}} onClick={DeletePost}><DeleteForeverIcon/></Button>
+                <Button style={{marginLeft: "auto"}} onClick={DeletePost}>
+                  <DeleteForeverIcon />
+                </Button>
               </Typography>
             </Grid>
           </Grid>
