@@ -7,6 +7,8 @@ import Card from "@material-ui/core/Card"
 import CardContent from "@material-ui/core/CardContent"
 import CardMedia from "@material-ui/core/CardMedia"
 import Typography from "@material-ui/core/Typography"
+import {Button, Grid} from "@material-ui/core"
+import DeleteForeverIcon from "@material-ui/icons/DeleteForever"
 
 const useStyles = makeStyles({
   root: {
@@ -49,12 +51,25 @@ const Profile = (profile) => {
       <Card className={classes.root}>
         <CardContent>
           <CardMedia className={classes.media} image={profile.profile.Image || "https://miro.medium.com/max/1200/1*mk1-6aYaf_Bes1E3Imhc0A.jpeg"} title='Contemplative Reptile' />
-          <Typography variant='h5' component='h2'>
-            {profile.profile.Name}
-          </Typography>
+          <Grid container direction='row' justify='space-between'>
+            <Grid item>
+              <Typography variant='h6' component='h2'>
+                {profile.profile.Name}
+              </Typography>
+            </Grid>
+            <Grid item>
+              <Typography>
+                <Button style={{marginLeft: "auto"}} onClick={DeleteProfile}>
+                  <DeleteForeverIcon />
+                </Button>
+              </Typography>
+            </Grid>
+          </Grid>
+          
           <Typography className={classes.pos} color='textSecondary'>
             {profile.profile.Designation}
           </Typography>
+          
           <Typography variant='body2' component='p'>
             {profile.profile.Content}
           </Typography>
