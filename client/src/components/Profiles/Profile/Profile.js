@@ -45,7 +45,7 @@ const Profile = (profile) => {
   }
 
   return (
-    <Link to={{pathname: "/edit", state: profile}}>
+    <Link to={{pathname: "/edit", state: profile}} style={{textDecoration: "none"}}>
       <Card className={classes.root}>
         <CardContent>
           <CardMedia className={classes.media} image='https://miro.medium.com/max/1200/1*mk1-6aYaf_Bes1E3Imhc0A.jpeg' title='Contemplative Reptile' />
