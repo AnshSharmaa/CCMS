@@ -73,7 +73,7 @@ const EditProfile = (profile) => {
             <Card style={{backgroundColor: mcgpalette0["background-color-3"]}}>
               <CardContent>
                 <Button className={stylesClasses.customButton} style={{marginTop: "4px", marginBottom: "10px", backgroundColor: "#00000000"}} variant='contained' component='label'>
-                  <img className={classes.media} src={profile.profile.Image} title='Contemplative Reptile' />
+                  <img className={classes.media} src={profile.profile.Image || "https://miro.medium.com/max/1200/1*mk1-6aYaf_Bes1E3Imhc0A.jpeg"} title='Contemplative Reptile' />
                   <FileBase name='file' type='file' multiple={false} onDone={({base64}) => setProfileData({...profileData, Image: base64})} />
                 </Button>
                 <Grid container justify='space-between' alignItems='center'>
