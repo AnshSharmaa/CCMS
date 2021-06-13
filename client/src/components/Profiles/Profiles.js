@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from "react"
-import { makeStyles } from "@material-ui/core/styles"
-import { Grid, CircularProgress } from "@material-ui/core"
+import React, {useState, useEffect} from "react"
+import {makeStyles} from "@material-ui/core/styles"
+import {Grid, CircularProgress} from "@material-ui/core"
 import Profile from "./Profile/Profile"
 import * as api from "../../api/api"
 
@@ -23,7 +23,7 @@ const useStyles = makeStyles({
 
 const Profiles = () => {
   const classes = useStyles()
-  const [profiles, setProfiles] = useState({ Profiles: [] })
+  const [profiles, setProfiles] = useState({Profiles: []})
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState(null)
   useEffect(() => {
@@ -50,12 +50,7 @@ const Profiles = () => {
   return !profiles.length ? (
     <CircularProgress />
   ) : (
-    <Grid
-      className={classes.container}
-      container
-      alignItems="stretch"
-      spacing={3}
-    >
+    <Grid className={classes.container} container alignItems='stretch' spacing={3}>
       {profiles.map((profile) => (
         <Grid key={profile._id} item xs={12} sm={6} md={6}>
           <Profile profile={profile} />

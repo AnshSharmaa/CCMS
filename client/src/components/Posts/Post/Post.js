@@ -45,12 +45,7 @@ const Post = (post) => {
     history.push("/data")
   }
   return (
-    <Link
-      to={{
-        pathname: "/edit",
-        state: post,
-      }}
-      style={{textDecoration: "none"}}>
+    <Link to={{pathname: "/edit", state: post}} style={{textDecoration: "none"}}>
       <Card className={classes.root}>
         <CardContent>
           <Grid container justify='space-between'>

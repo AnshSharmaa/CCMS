@@ -1,5 +1,8 @@
 import React from "react"
-import { makeStyles } from "@material-ui/core/styles"
+import {useHistory} from "react-router-dom"
+import {Link} from "react-router-dom"
+import {deleteProfile} from "../../../api/api"
+import {makeStyles} from "@material-ui/core/styles"
 import Card from "@material-ui/core/Card"
 import CardContent from "@material-ui/core/CardContent"
 import CardMedia from "@material-ui/core/CardMedia"
@@ -27,26 +30,37 @@ const useStyles = makeStyles({
 
 const Profile = (profile) => {
   const classes = useStyles()
+  const history = useHistory()
+
+  const DeleteProfile = async (e) => {
+    await deleteProfile(profile.profile._id)
+      .then((response) => {
+        console.log(response)
+      })
+      .catch((error) => {
+        console.error("Error making post: ", error)
+      })
+
+    history.push("/data")
+  }
 
   return (
-    <Card className={classes.root}>
-      <CardContent>
-        <CardMedia
-          className={classes.media}
-          image="https://miro.medium.com/max/1200/1*mk1-6aYaf_Bes1E3Imhc0A.jpeg"
-          title="Contemplative Reptile"
-        />
-        <Typography variant="h5" component="h2">
-          {profile.profile.Name}
-        </Typography>
-        <Typography className={classes.pos} color="textSecondary">
-          {profile.profile.Designation}
-        </Typography>
-        <Typography variant="body2" component="p">
-          {profile.profile.Content}
-        </Typography>
-      </CardContent>
-    </Card>
+    <Link to={{pathname: "/edit", state: profile}}>
+      <Card className={classes.root}>
+        <CardContent>
+          <CardMedia className={classes.media} image='https://miro.medium.com/max/1200/1*mk1-6aYaf_Bes1E3Imhc0A.jpeg' title='Contemplative Reptile' />
+          <Typography variant='h5' component='h2'>
+            {profile.profile.Name}
+          </Typography>
+          <Typography className={classes.pos} color='textSecondary'>
+            {profile.profile.Designation}
+          </Typography>
+          <Typography variant='body2' component='p'>
+            {profile.profile.Content}
+          </Typography>
+        </CardContent>
+      </Card>
+    </Link>
   )
 }
 
