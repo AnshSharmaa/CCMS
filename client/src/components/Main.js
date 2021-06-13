@@ -1,14 +1,6 @@
 import React from "react"
-import {
-  Box,
-  Paper,
-  Card,
-  Grid,
-  CardContent,
-  Container,
-  Typography,
-} from "@material-ui/core"
-import { makeStyles } from "@material-ui/core/styles"
+import {Box, Paper, Card, Grid, CardContent, Container, Typography} from "@material-ui/core"
+import {makeStyles} from "@material-ui/core/styles"
 import logo from "../Images/Logo.png"
 import Auth from "./Auth/Auth"
 import mcgpalette0 from "../styles/colors"
@@ -49,32 +41,28 @@ const Main = () => {
 
   return (
     <Paper className={classes.container}>
-      <Grid
-        container
-        direction="row"
-        justify="space-around"
-        alignItems="center"
-        className={classes.MainDiv}
-      >
+      <Grid container direction='row' justify='space-around' alignItems='center' className={classes.MainDiv}>
         <Grid item className={classes.LOGO}>
-          <img src={logo} alt="logo"></img>
+          <img src={logo} alt='logo'></img>
         </Grid>
-        <Typography variant="h4" className={classes.HiText}>
+        <Typography variant='h4' className={classes.HiText}>
           Hi, Welcome to Custom CMS
         </Typography>
       </Grid>
-      <Box component="div" className={classes.feat}>
-        <Typography align="center" variant="h5">
+      <Box component='div' className={classes.feat}>
+        <Typography align='center' variant='h5'>
           Features
         </Typography>
       </Box>
       <Container>
-        <Grid
-          container
-          direction="row"
-          justify="space-around"
-          alignItems="stretch"
-        >
+        <Grid container direction='row' justify='space-around' alignItems='stretch'>
+          <Grid item>
+            <Card className={classes.card}>
+              <CardContent>
+                <Typography>OAuth Security</Typography>
+              </CardContent>
+            </Card>
+          </Grid>
           <Grid item>
             <Card className={classes.card}>
               <CardContent>
@@ -105,15 +93,11 @@ const Main = () => {
           </Grid>
         </Grid>
       </Container>
-      <Box component="div" className={classes.started}>
-        <Typography
-          align="center"
-          variant="h5"
-          style={{ paddingTop: "20px", paddingBottom: "20px" }}
-        >
+      <Box component='div' className={classes.started}>
+        <Typography align='center' variant='h5' style={{paddingTop: "20px", paddingBottom: "20px"}}>
           Getting Started
         </Typography>
-        <Grid container justify="center" spacing={3}>
+        <Grid container justify='center' spacing={3}>
           <Grid>
             <Auth />
           </Grid>
