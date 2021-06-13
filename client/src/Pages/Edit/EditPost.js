@@ -17,7 +17,6 @@ const EditPost = (post) => {
   })
   const postD = post.post.Date.split("-")
   const date = postD[0] + "-" + postD[1] + "-" + postD[2].split("T")[0]
-  console.log(post)
   const history = useHistory()
 
   const handleUpdatePost = async (e) => {

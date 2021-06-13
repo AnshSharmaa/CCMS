@@ -81,8 +81,7 @@ const ProfileForm = (user) => {
 
               <ButtonGroup style={{marginLeft: "auto"}}>
                 <Button className={stylesClasses.customButtonContainedSecondary} style={{marginTop: "0", marginBottom: "0"}} variant='contained' component='label'>
-                  <ImageIcon />
-                  <input hidden type='file' />
+                  <FileBase name='file' type='file' multiple={false} onDone={({base64}) => setProfileData({...profileData, Image: base64})} />
                 </Button>
                 <Button type='submit' className={stylesClasses.customButtonContainedSecondary} style={{marginTop: "0", marginBottom: "0"}}>
                   Submit
