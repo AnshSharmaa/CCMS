@@ -1,6 +1,7 @@
 import React, {useState} from "react"
 import {GoogleLogin} from "react-google-login"
 import {Button, Typography} from "@material-ui/core"
+import {useHistory} from "react-router-dom"
 
 import Gicon from "./icon"
 import styles from "../../styles/styles"
@@ -10,6 +11,9 @@ import "./Auth.css"
 const Auth = () => {
   const [user, setUser] = useState(JSON.parse(localStorage.getItem("profile")))
   const stylesClasses = styles()
+
+  const history = useHistory()
+
   const logout = () => {
     localStorage.clear()
     setUser(null)
@@ -23,9 +27,10 @@ const Auth = () => {
 
       localStorage.setItem("profile", JSON.stringify({result, token}))
       setUser(result, token)
-      window.location.reload()
       console.log(result)
       console.log(token)
+      history.push("/data")
+      window.location.reload()
     } catch (error) {
       console.log(error)
     }
