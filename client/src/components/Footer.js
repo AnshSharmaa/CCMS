@@ -46,11 +46,9 @@ const Footer = () => {
             alignItems="center"
             style={{ minWidth: "400px" }}
           >
-            <Grid item>Name1</Grid>
-            <Grid item>Name2</Grid>
-            <Grid item>Name3</Grid>
-            <Grid item>Name4</Grid>
-            <Grid item>Name5</Grid>
+            <Grid item>Ansh Sharma</Grid>
+            <Grid item>Gursimran Singh</Grid>
+            <Grid item>Shreya Sharma</Grid>
           </Grid>
         </Grid>
       </Grid>
