@@ -19,12 +19,7 @@ const Header = () => {
   const classes = useStyles()
   const stylesClasses = styles()
   return (
-    <AppBar
-      position='static'
-      style={{
-        background: "linear-gradient(39deg, rgba(11,6,101,1) 0%, rgba(141,42,74,89) 0%, rgba(204,46,93,1) 52%, rgba(210,40,130,1) 73%, rgba(87,153,206,1) 100%, rgba(9,225,255,1) 100%)",
-        background: "#1a1a1a",
-      }}>
+    <AppBar position='static' style={{background: "#1a1a1a"}}>
       <Toolbar>
         <IconButton edge='start' color='inherit' aria-label='menu' component={Link} to='/'></IconButton>
 

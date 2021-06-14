@@ -31,6 +31,7 @@ const useStyles = makeStyles({
 })
 
 const Profile = (profile) => {
+  const user = JSON.parse(localStorage.getItem("profile"))
   const classes = useStyles()
   const history = useHistory()
 
@@ -45,9 +46,41 @@ const Profile = (profile) => {
 
     history.push("/data")
   }
+  if (user) {
+    return (
+      <Link to={{pathname: "/edit", state: profile}} style={{textDecoration: "none"}}>
+        <Card className={classes.root}>
+          <CardContent>
+            <CardMedia className={classes.media} image={profile.profile.Image || "https://miro.medium.com/max/1200/1*mk1-6aYaf_Bes1E3Imhc0A.jpeg"} title='Contemplative Reptile' />
+            <Grid container direction='row' justify='space-between'>
+              <Grid item>
+                <Typography variant='h6' component='h2'>
+                  {profile.profile.Name}
+                </Typography>
+              </Grid>
+              <Grid item>
+                <Typography>
+                  <Button style={{marginLeft: "auto"}} onClick={DeleteProfile}>
+                    <DeleteForeverIcon />
+                  </Button>
+                </Typography>
+              </Grid>
+            </Grid>
 
-  return (
-    <Link to={{pathname: "/edit", state: profile}} style={{textDecoration: "none"}}>
+            <Typography className={classes.pos} color='textSecondary'>
+              {profile.profile.Designation}
+            </Typography>
+
+            <Typography variant='body2' component='p'>
+              {profile.profile.Content}
+            </Typography>
+          </CardContent>
+        </Card>
+      </Link>
+    )
+  }
+  if (!user) {
+    return (
       <Card className={classes.root}>
         <CardContent>
           <CardMedia className={classes.media} image={profile.profile.Image || "https://miro.medium.com/max/1200/1*mk1-6aYaf_Bes1E3Imhc0A.jpeg"} title='Contemplative Reptile' />
@@ -57,26 +90,19 @@ const Profile = (profile) => {
                 {profile.profile.Name}
               </Typography>
             </Grid>
-            <Grid item>
-              <Typography>
-                <Button style={{marginLeft: "auto"}} onClick={DeleteProfile}>
-                  <DeleteForeverIcon />
-                </Button>
-              </Typography>
-            </Grid>
           </Grid>
-          
+
           <Typography className={classes.pos} color='textSecondary'>
             {profile.profile.Designation}
           </Typography>
-          
+
           <Typography variant='body2' component='p'>
             {profile.profile.Content}
           </Typography>
         </CardContent>
       </Card>
-    </Link>
-  )
+    )
+  }
 }
 
 export default Profile

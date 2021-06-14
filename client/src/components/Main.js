@@ -26,6 +26,10 @@ const useStyles = makeStyles({
     color: mcgpalette0["text-color-light"],
     height: "200px",
     minWidth: "200px",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    fontSize: 324,
   },
   started: {
     backgroundColor: mcgpalette0["background-color"],

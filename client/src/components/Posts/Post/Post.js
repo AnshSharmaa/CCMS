@@ -29,6 +29,7 @@ const useStyles = makeStyles({
 
 const Post = (post) => {
   const classes = useStyles()
+  const user = JSON.parse(localStorage.getItem("profile"))
   const postD = post.post.Date.split("-")
   const date = postD[0] + "-" + postD[1] + "-" + postD[2].split("T")[0]
   const history = useHistory()
@@ -44,8 +45,39 @@ const Post = (post) => {
 
     history.push("/data")
   }
-  return (
-    <Link to={{pathname: "/edit", state: post}} style={{textDecoration: "none"}}>
+  if (user) {
+    return (
+      <Link to={{pathname: "/edit", state: post}} style={{textDecoration: "none"}}>
+        <Card className={classes.root}>
+          <CardContent>
+            <Grid container justify='space-between'>
+              <Grid item>
+                <Typography variant='h5' component='h2'>
+                  {post.post.Title}
+                </Typography>
+              </Grid>
+              <Grid>
+                <Typography variant='body2' component='p'>
+                  {date}
+                  <Button style={{marginLeft: "auto"}} onClick={DeletePost}>
+                    <DeleteForeverIcon />
+                  </Button>
+                </Typography>
+              </Grid>
+            </Grid>
+            <Typography className={classes.pos} color='textSecondary'>
+              {post.post.Author}
+            </Typography>
+            <Typography variant='body2' component='p'>
+              {post.post.Content}
+            </Typography>
+          </CardContent>
+        </Card>
+      </Link>
+    )
+  }
+  if (!user) {
+    return (
       <Card className={classes.root}>
         <CardContent>
           <Grid container justify='space-between'>
@@ -57,9 +89,6 @@ const Post = (post) => {
             <Grid>
               <Typography variant='body2' component='p'>
                 {date}
-                <Button style={{marginLeft: "auto"}} onClick={DeletePost}>
-                  <DeleteForeverIcon />
-                </Button>
               </Typography>
             </Grid>
           </Grid>
@@ -71,8 +100,8 @@ const Post = (post) => {
           </Typography>
         </CardContent>
       </Card>
-    </Link>
-  )
+    )
+  }
 }
 
 export default Post

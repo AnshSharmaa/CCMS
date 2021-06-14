@@ -5,7 +5,6 @@ import FileBase from "react-file-base64"
 import styles from "../../styles/styles"
 import mcgpalette0 from "../../styles/colors"
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore"
-import ImageIcon from "@material-ui/icons/Image"
 import {createProfile} from "../../api/api"
 
 const useStyles = makeStyles({
@@ -79,11 +78,11 @@ const ProfileForm = (user) => {
               <Typography style={{color: mcgpalette0["text-color-light"]}}>Content</Typography>
               <TextField required fullWidth multiline rows={4} className={classes.customTextField} name='Content' onChange={(e) => setProfileData({...profileData, Content: e.target.value})} />
 
-              <ButtonGroup style={{marginLeft: "auto"}}>
-                <Button className={stylesClasses.customButtonContainedSecondary} style={{marginTop: "0", marginBottom: "0"}} variant='contained' component='label'>
+              <ButtonGroup style={{padding: "10px 0", fontWeight: "600", margin: "0"}}>
+                <Button className={stylesClasses.customButtonContainedSecondary} style={{marginTop: "0", marginBottom: "0", fontWeight: "600"}} variant='contained' component='label'>
                   <FileBase name='file' type='file' multiple={false} onDone={({base64}) => setProfileData({...profileData, Image: base64})} />
                 </Button>
-                <Button type='submit' className={stylesClasses.customButtonContainedSecondary} style={{marginTop: "0", marginBottom: "0"}}>
+                <Button type='submit' className={stylesClasses.customButtonContainedSecondary} style={{marginTop: "0", marginBottom: "0", fontWeight: "600"}}>
                   Submit
                 </Button>
               </ButtonGroup>
