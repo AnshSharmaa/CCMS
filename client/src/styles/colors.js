@@ -1,6 +1,6 @@
 /* For use in material-ui/src/styles/colors.js */
 export const mcgpalette0 = {
-  "primary-color": "#3a3a3a", //Red Flag
+  "primary-color": "#3a3a3a",
   "primary-color-light": "#F8C25C",
 
   "secondary-color": "#F8C25C", //Saffron Mango
